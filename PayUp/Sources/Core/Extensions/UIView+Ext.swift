@@ -9,10 +9,10 @@ import Foundation
 import UIKit
 
 extension UIView {
-    func animateMoveOut(to point: CGPoint, duration: TimeInterval) {
-        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseInOut) {
-            self.center = point
-            self.alpha = 0
+    func animateFadeIn(duration: TimeInterval = 1.0, delay: TimeInterval = 0.0) {
+        self.alpha = 0
+        UIView.animate(withDuration: duration, delay: delay, options: .curveEaseInOut) {
+            self.alpha = 1
         }
     }
 }

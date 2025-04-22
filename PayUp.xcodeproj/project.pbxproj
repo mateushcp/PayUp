@@ -13,6 +13,26 @@
 		A9CEC9A82DB6EB7A004EE888 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CEC9A72DB6EB7A004EE888 /* Colors.swift */; };
 		A9CEC9AA2DB6EBD5004EE888 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CEC9A92DB6EBD5004EE888 /* Fonts.swift */; };
 		A9CEC9AC2DB6EC19004EE888 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CEC9AB2DB6EC19004EE888 /* UIView+Ext.swift */; };
+		A9CEC9B02DB6EF89004EE888 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CEC9AF2DB6EF89004EE888 /* SplashView.swift */; };
+		A9CEC9B22DB6EFAB004EE888 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CEC9B12DB6EFAB004EE888 /* SplashViewController.swift */; };
+		A9CEC9B42DB6EFE8004EE888 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CEC9B32DB6EFE8004EE888 /* SplashViewModel.swift */; };
+		A9CEC9C72DB6F602004EE888 /* K2D-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9CEC9B62DB6F602004EE888 /* K2D-SemiBold.ttf */; };
+		A9CEC9C82DB6F603004EE888 /* K2D-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9CEC9B72DB6F602004EE888 /* K2D-Bold.ttf */; };
+		A9CEC9C92DB6F603004EE888 /* K2D-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9CEC9B82DB6F602004EE888 /* K2D-Regular.ttf */; };
+		A9CEC9CA2DB6F603004EE888 /* K2D-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9CEC9B92DB6F602004EE888 /* K2D-Thin.ttf */; };
+		A9CEC9CB2DB6F603004EE888 /* K2D-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9CEC9BA2DB6F602004EE888 /* K2D-Italic.ttf */; };
+		A9CEC9CC2DB6F603004EE888 /* K2D-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9CEC9BB2DB6F602004EE888 /* K2D-LightItalic.ttf */; };
+		A9CEC9CD2DB6F603004EE888 /* K2D-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9CEC9BC2DB6F602004EE888 /* K2D-ExtraBold.ttf */; };
+		A9CEC9CE2DB6F603004EE888 /* K2D-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9CEC9BD2DB6F602004EE888 /* K2D-ExtraLightItalic.ttf */; };
+		A9CEC9CF2DB6F603004EE888 /* K2D-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9CEC9BE2DB6F602004EE888 /* K2D-ExtraLight.ttf */; };
+		A9CEC9D02DB6F603004EE888 /* K2D-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9CEC9BF2DB6F602004EE888 /* K2D-MediumItalic.ttf */; };
+		A9CEC9D12DB6F603004EE888 /* K2D-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9CEC9C02DB6F602004EE888 /* K2D-ThinItalic.ttf */; };
+		A9CEC9D22DB6F603004EE888 /* K2D-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9CEC9C12DB6F602004EE888 /* K2D-BoldItalic.ttf */; };
+		A9CEC9D32DB6F603004EE888 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = A9CEC9C22DB6F602004EE888 /* OFL.txt */; };
+		A9CEC9D42DB6F603004EE888 /* K2D-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9CEC9C32DB6F602004EE888 /* K2D-SemiBoldItalic.ttf */; };
+		A9CEC9D52DB6F603004EE888 /* K2D-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9CEC9C42DB6F602004EE888 /* K2D-Light.ttf */; };
+		A9CEC9D62DB6F603004EE888 /* K2D-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9CEC9C52DB6F602004EE888 /* K2D-ExtraBoldItalic.ttf */; };
+		A9CEC9D72DB6F603004EE888 /* K2D-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9CEC9C62DB6F602004EE888 /* K2D-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +44,26 @@
 		A9CEC9A72DB6EB7A004EE888 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		A9CEC9A92DB6EBD5004EE888 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		A9CEC9AB2DB6EC19004EE888 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		A9CEC9AF2DB6EF89004EE888 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		A9CEC9B12DB6EFAB004EE888 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		A9CEC9B32DB6EFE8004EE888 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		A9CEC9B62DB6F602004EE888 /* K2D-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-SemiBold.ttf"; sourceTree = "<group>"; };
+		A9CEC9B72DB6F602004EE888 /* K2D-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-Bold.ttf"; sourceTree = "<group>"; };
+		A9CEC9B82DB6F602004EE888 /* K2D-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-Regular.ttf"; sourceTree = "<group>"; };
+		A9CEC9B92DB6F602004EE888 /* K2D-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-Thin.ttf"; sourceTree = "<group>"; };
+		A9CEC9BA2DB6F602004EE888 /* K2D-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-Italic.ttf"; sourceTree = "<group>"; };
+		A9CEC9BB2DB6F602004EE888 /* K2D-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-LightItalic.ttf"; sourceTree = "<group>"; };
+		A9CEC9BC2DB6F602004EE888 /* K2D-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-ExtraBold.ttf"; sourceTree = "<group>"; };
+		A9CEC9BD2DB6F602004EE888 /* K2D-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		A9CEC9BE2DB6F602004EE888 /* K2D-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-ExtraLight.ttf"; sourceTree = "<group>"; };
+		A9CEC9BF2DB6F602004EE888 /* K2D-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-MediumItalic.ttf"; sourceTree = "<group>"; };
+		A9CEC9C02DB6F602004EE888 /* K2D-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-ThinItalic.ttf"; sourceTree = "<group>"; };
+		A9CEC9C12DB6F602004EE888 /* K2D-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-BoldItalic.ttf"; sourceTree = "<group>"; };
+		A9CEC9C22DB6F602004EE888 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		A9CEC9C32DB6F602004EE888 /* K2D-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		A9CEC9C42DB6F602004EE888 /* K2D-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-Light.ttf"; sourceTree = "<group>"; };
+		A9CEC9C52DB6F602004EE888 /* K2D-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		A9CEC9C62DB6F602004EE888 /* K2D-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-Medium.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +80,7 @@
 		A9CEC9802DB6E960004EE888 = {
 			isa = PBXGroup;
 			children = (
+				A9CEC9B52DB6F602004EE888 /* K2D */,
 				A9CEC98B2DB6E960004EE888 /* PayUp */,
 				A9CEC98A2DB6E960004EE888 /* Products */,
 			);
@@ -68,6 +109,7 @@
 		A9CEC9A02DB6EB2C004EE888 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				A9CEC9AD2DB6EF72004EE888 /* Features */,
 				A9CEC9A22DB6EB4D004EE888 /* Core */,
 			);
 			path = Sources;
@@ -121,6 +163,49 @@
 			children = (
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		A9CEC9AD2DB6EF72004EE888 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				A9CEC9AE2DB6EF7D004EE888 /* Splash */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		A9CEC9AE2DB6EF7D004EE888 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				A9CEC9AF2DB6EF89004EE888 /* SplashView.swift */,
+				A9CEC9B12DB6EFAB004EE888 /* SplashViewController.swift */,
+				A9CEC9B32DB6EFE8004EE888 /* SplashViewModel.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		A9CEC9B52DB6F602004EE888 /* K2D */ = {
+			isa = PBXGroup;
+			children = (
+				A9CEC9B62DB6F602004EE888 /* K2D-SemiBold.ttf */,
+				A9CEC9B72DB6F602004EE888 /* K2D-Bold.ttf */,
+				A9CEC9B82DB6F602004EE888 /* K2D-Regular.ttf */,
+				A9CEC9B92DB6F602004EE888 /* K2D-Thin.ttf */,
+				A9CEC9BA2DB6F602004EE888 /* K2D-Italic.ttf */,
+				A9CEC9BB2DB6F602004EE888 /* K2D-LightItalic.ttf */,
+				A9CEC9BC2DB6F602004EE888 /* K2D-ExtraBold.ttf */,
+				A9CEC9BD2DB6F602004EE888 /* K2D-ExtraLightItalic.ttf */,
+				A9CEC9BE2DB6F602004EE888 /* K2D-ExtraLight.ttf */,
+				A9CEC9BF2DB6F602004EE888 /* K2D-MediumItalic.ttf */,
+				A9CEC9C02DB6F602004EE888 /* K2D-ThinItalic.ttf */,
+				A9CEC9C12DB6F602004EE888 /* K2D-BoldItalic.ttf */,
+				A9CEC9C22DB6F602004EE888 /* OFL.txt */,
+				A9CEC9C32DB6F602004EE888 /* K2D-SemiBoldItalic.ttf */,
+				A9CEC9C42DB6F602004EE888 /* K2D-Light.ttf */,
+				A9CEC9C52DB6F602004EE888 /* K2D-ExtraBoldItalic.ttf */,
+				A9CEC9C62DB6F602004EE888 /* K2D-Medium.ttf */,
+			);
+			name = K2D;
+			path = ../../Downloads/K2D;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,7 +266,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9CEC9D32DB6F603004EE888 /* OFL.txt in Resources */,
+				A9CEC9CF2DB6F603004EE888 /* K2D-ExtraLight.ttf in Resources */,
+				A9CEC9D12DB6F603004EE888 /* K2D-ThinItalic.ttf in Resources */,
+				A9CEC9D42DB6F603004EE888 /* K2D-SemiBoldItalic.ttf in Resources */,
+				A9CEC9CD2DB6F603004EE888 /* K2D-ExtraBold.ttf in Resources */,
+				A9CEC9D62DB6F603004EE888 /* K2D-ExtraBoldItalic.ttf in Resources */,
+				A9CEC9D02DB6F603004EE888 /* K2D-MediumItalic.ttf in Resources */,
+				A9CEC9D22DB6F603004EE888 /* K2D-BoldItalic.ttf in Resources */,
 				A9CEC9962DB6E963004EE888 /* Assets.xcassets in Resources */,
+				A9CEC9D72DB6F603004EE888 /* K2D-Medium.ttf in Resources */,
+				A9CEC9CC2DB6F603004EE888 /* K2D-LightItalic.ttf in Resources */,
+				A9CEC9CE2DB6F603004EE888 /* K2D-ExtraLightItalic.ttf in Resources */,
+				A9CEC9C72DB6F602004EE888 /* K2D-SemiBold.ttf in Resources */,
+				A9CEC9CB2DB6F603004EE888 /* K2D-Italic.ttf in Resources */,
+				A9CEC9CA2DB6F603004EE888 /* K2D-Thin.ttf in Resources */,
+				A9CEC9C82DB6F603004EE888 /* K2D-Bold.ttf in Resources */,
+				A9CEC9C92DB6F603004EE888 /* K2D-Regular.ttf in Resources */,
+				A9CEC9D52DB6F603004EE888 /* K2D-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +299,9 @@
 				A9CEC9AC2DB6EC19004EE888 /* UIView+Ext.swift in Sources */,
 				A9CEC9A82DB6EB7A004EE888 /* Colors.swift in Sources */,
 				A9CEC98F2DB6E960004EE888 /* SceneDelegate.swift in Sources */,
+				A9CEC9B22DB6EFAB004EE888 /* SplashViewController.swift in Sources */,
+				A9CEC9B02DB6EF89004EE888 /* SplashView.swift in Sources */,
+				A9CEC9B42DB6EFE8004EE888 /* SplashViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
