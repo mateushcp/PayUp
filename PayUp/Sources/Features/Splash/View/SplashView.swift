@@ -24,8 +24,8 @@ final class SplashView: UIView {
         return imageView
     }()
     
-    let example = InputTextFieldView(title: "CNPJ", placeholder: "CPNJ")
-    
+    let faceIDView = FaceIDView()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -39,7 +39,7 @@ final class SplashView: UIView {
         backgroundColor = Colors.backgroundPrimary
         addSubview(triangleImageView)
         addSubview(logoImageView)
-        addSubview(example)
+        addSubview(faceIDView)
         
     }
     
@@ -49,7 +49,20 @@ final class SplashView: UIView {
         logoImageView.center = center
         logoImageView.bounds.size = CGSize(width: 100,
                                            height: 100)
-        example.frame = CGRect(x: 32, y: bounds.height - 200, width: bounds.width - 70, height: 60)
+        faceIDView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            faceIDView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            faceIDView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            faceIDView.widthAnchor.constraint(equalToConstant: 343),
+            faceIDView.heightAnchor.constraint(equalToConstant: 606)
+        ])
+
+    }
+    
+    func showFaceIDView() {
+        UIView.animate(withDuration: 0.5) {
+            self.faceIDView.alpha = 1
+        }
     }
 }
 
