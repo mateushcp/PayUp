@@ -24,7 +24,7 @@ final class SplashView: UIView {
         return imageView
     }()
     
-    let exampleTextField = CustomTextFieldView(title: "Nome", placeholder: "Ex: João Silva | Loja do Bairro")
+    let example = InputTextFieldView(title: "CNPJ", placeholder: "CPNJ")
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,8 +39,8 @@ final class SplashView: UIView {
         backgroundColor = Colors.backgroundPrimary
         addSubview(triangleImageView)
         addSubview(logoImageView)
-        addSubview(exampleTextField)
-
+        addSubview(example)
+        
     }
     
     override func layoutSubviews() {
@@ -49,8 +49,7 @@ final class SplashView: UIView {
         logoImageView.center = center
         logoImageView.bounds.size = CGSize(width: 100,
                                            height: 100)
-        
-        exampleTextField.frame = CGRect(x: 32, y: bounds.height - 200, width: bounds.width - 64, height: 60)
+        example.frame = CGRect(x: 32, y: bounds.height - 200, width: bounds.width - 70, height: 60)
     }
 }
 
