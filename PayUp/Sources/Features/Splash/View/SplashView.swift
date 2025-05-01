@@ -24,8 +24,8 @@ final class SplashView: UIView {
         return imageView
     }()
     
-    let faceIDView = FaceIDView()
-
+    let example = AuthenticationView()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -39,7 +39,7 @@ final class SplashView: UIView {
         backgroundColor = Colors.backgroundPrimary
         addSubview(triangleImageView)
         addSubview(logoImageView)
-        addSubview(faceIDView)
+        addSubview(example)
         
     }
     
@@ -49,20 +49,13 @@ final class SplashView: UIView {
         logoImageView.center = center
         logoImageView.bounds.size = CGSize(width: 100,
                                            height: 100)
-        faceIDView.translatesAutoresizingMaskIntoConstraints = false
+        example.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            faceIDView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            faceIDView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            faceIDView.widthAnchor.constraint(equalToConstant: 343),
-            faceIDView.heightAnchor.constraint(equalToConstant: 606)
+            example.centerXAnchor.constraint(equalTo: centerXAnchor),
+            example.centerYAnchor.constraint(equalTo: centerYAnchor),
+            example.widthAnchor.constraint(equalToConstant: 343),
+            example.widthAnchor.constraint(equalToConstant: 600)
         ])
-
-    }
-    
-    func showFaceIDView() {
-        UIView.animate(withDuration: 0.5) {
-            self.faceIDView.alpha = 1
-        }
     }
 }
 
