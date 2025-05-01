@@ -9,15 +9,15 @@ import Foundation
 import UIKit
 
 enum Colors {
-    static let backgroundPrimary = UIColor(hex: "#000000")
-    static let backgroundSecondary = UIColor(hex: "#1A1A1A")
-    static let backgroundTertiary = UIColor(hex: "#2D2D2D")
+    static let backgroundPrimary = UIColor(hex: "#0F110E")
+    static let backgroundSecondary = UIColor(hex: "##161616")
+    static let backgroundTertiary = UIColor(hex: "#1B1B1B")
 
     static let accentBrand = UIColor(hex: "#57F2BE")
-    static let accentBrandDark = UIColor(hex: "#00C189")
-    static let accentGreen = UIColor(hex: "#9BF7B7")
-    static let accentOrange = UIColor(hex: "#FFA94D")
-    static let accentRed = UIColor(hex: "#FF5E5E")
+    static let accentBrandDark = UIColor(hex: "#16CA8D")
+    static let accentGreen = UIColor(hex: "#8FF48E")
+    static let accentOrange = UIColor(hex: "#FFA235")
+    static let accentRed = UIColor(hex: "#E61E32")
 
     static let textHeading = UIColor(hex: "#FFFFFF")
     static let textSpan = UIColor(hex: "#B2B2B2")
