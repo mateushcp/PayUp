@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A90F36B52DC422470038361E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F36B42DC422470038361E /* HomeViewController.swift */; };
 		A90F36B72DC422540038361E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F36B62DC422540038361E /* HomeView.swift */; };
+		A90F36B92DC42B6D0038361E /* dayselector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F36B82DC42B6D0038361E /* dayselector.swift */; };
 		A9CB7EAE2DB90BDB00A1FA94 /* K2D-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9CB7E9D2DB90BDA00A1FA94 /* K2D-SemiBold.ttf */; };
 		A9CB7EAF2DB90BDB00A1FA94 /* K2D-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9CB7E9E2DB90BDA00A1FA94 /* K2D-Bold.ttf */; };
 		A9CB7EB02DB90BDB00A1FA94 /* K2D-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9CB7E9F2DB90BDA00A1FA94 /* K2D-Regular.ttf */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		A90F36B42DC422470038361E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A90F36B62DC422540038361E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A90F36B82DC42B6D0038361E /* dayselector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dayselector.swift; sourceTree = "<group>"; };
 		A9CB7E9D2DB90BDA00A1FA94 /* K2D-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-SemiBold.ttf"; sourceTree = "<group>"; };
 		A9CB7E9E2DB90BDA00A1FA94 /* K2D-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-Bold.ttf"; sourceTree = "<group>"; };
 		A9CB7E9F2DB90BDA00A1FA94 /* K2D-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-Regular.ttf"; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 			children = (
 				A90F36B12DC422270038361E /* Home */,
 				A9CECA1F2DB72DEB004EE888 /* Splash */,
+				A90F36B82DC42B6D0038361E /* dayselector.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 			files = (
 				A9CEC9AA2DB6EBD5004EE888 /* Fonts.swift in Sources */,
 				A90F36B72DC422540038361E /* HomeView.swift in Sources */,
+				A90F36B92DC42B6D0038361E /* dayselector.swift in Sources */,
 				A9CEC98D2DB6E960004EE888 /* AppDelegate.swift in Sources */,
 				A9CB7EC32DB9961600A1FA94 /* AuthenticationView.swift in Sources */,
 				A9CECA322DB7437D004EE888 /* UITextField+Ext.swift in Sources */,
