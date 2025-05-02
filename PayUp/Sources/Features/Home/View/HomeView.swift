@@ -51,8 +51,9 @@ final class HomeView: UIView {
         addSubview(profileImage)
         addSubview(bellButton)
         addSubview(daySelectorView)
+        
         daySelectorView.translatesAutoresizingMaskIntoConstraints = false
-
+        
         NSLayoutConstraint.activate([
             logoImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -24),
             logoImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
