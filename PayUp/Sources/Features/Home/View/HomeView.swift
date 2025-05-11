@@ -57,8 +57,18 @@ final class HomeView: UIView {
         addSubview(paymentCardView)
         
         
+        let mockCompanies = [
+            CompanyItemViewModel(name: "Aurora Tech Soluções Digitais"),
+            CompanyItemViewModel(name: "Veltrix Labs"),
+            CompanyItemViewModel(name: "Orbitum Tecnologia")
+        ]
+        let companyListView = CompanyListView(companies: mockCompanies)
+        addSubview(companyListView)
+
+
         daySelectorView.translatesAutoresizingMaskIntoConstraints = false
         paymentCardView.translatesAutoresizingMaskIntoConstraints = false
+        companyListView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             logoImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -24),
@@ -84,7 +94,12 @@ final class HomeView: UIView {
             paymentCardView.topAnchor.constraint(equalTo: daySelectorView.bottomAnchor, constant: 24),
             paymentCardView.leadingAnchor.constraint(equalTo: daySelectorView.leadingAnchor),
             paymentCardView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
-            paymentCardView.heightAnchor.constraint(equalToConstant: 95)
+            paymentCardView.heightAnchor.constraint(equalToConstant: 95),
+            
+            companyListView.topAnchor.constraint(equalTo: paymentCardView.bottomAnchor, constant: 24),
+            companyListView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            companyListView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            companyListView.heightAnchor.constraint(equalToConstant: 141)
 
         ])
     }
