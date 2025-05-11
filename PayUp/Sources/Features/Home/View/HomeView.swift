@@ -40,6 +40,8 @@ final class HomeView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
+        
+        setupPaymentCard()
     }
     
     required init?(coder: NSCoder) {
@@ -53,7 +55,8 @@ final class HomeView: UIView {
         addSubview(bellButton)
         addSubview(daySelectorView)
         addSubview(paymentCardView)
-
+        
+        
         daySelectorView.translatesAutoresizingMaskIntoConstraints = false
         paymentCardView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -79,12 +82,14 @@ final class HomeView: UIView {
             daySelectorView.heightAnchor.constraint(equalToConstant: 32),
             
             paymentCardView.topAnchor.constraint(equalTo: daySelectorView.bottomAnchor, constant: 24),
-            paymentCardView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            paymentCardView.leadingAnchor.constraint(equalTo: daySelectorView.leadingAnchor),
             paymentCardView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
             paymentCardView.heightAnchor.constraint(equalToConstant: 95)
-        ])
-        
-        paymentCardView.configure(name: "Aurora Tech Soluções Digitais", value: "R$ 250,00")
 
+        ])
+    }
+    
+    private func setupPaymentCard() {
+        paymentCardView.configure(name: "autora Tech Soluções Digitais", value: "R$ 250,00")
     }
 }

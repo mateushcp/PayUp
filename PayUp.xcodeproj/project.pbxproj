@@ -11,7 +11,7 @@
 		A90F36B72DC422540038361E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F36B62DC422540038361E /* HomeView.swift */; };
 		A90F36BE2DC437260038361E /* DaySelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F36BD2DC437260038361E /* DaySelectorView.swift */; };
 		A90F36C02DC4394B0038361E /* DaySelectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F36BF2DC4394B0038361E /* DaySelectorViewModel.swift */; };
-		A90F36C22DC448F10038361E /* PaymentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F36C12DC448F10038361E /* PaymentCardView.swift */; };
+		A90F36C52DC46DAA0038361E /* PaymentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F36C42DC46DAA0038361E /* PaymentCardView.swift */; };
 		A9CB7EAE2DB90BDB00A1FA94 /* K2D-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9CB7E9D2DB90BDA00A1FA94 /* K2D-SemiBold.ttf */; };
 		A9CB7EAF2DB90BDB00A1FA94 /* K2D-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9CB7E9E2DB90BDA00A1FA94 /* K2D-Bold.ttf */; };
 		A9CB7EB02DB90BDB00A1FA94 /* K2D-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9CB7E9F2DB90BDA00A1FA94 /* K2D-Regular.ttf */; };
@@ -49,7 +49,7 @@
 		A90F36B62DC422540038361E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A90F36BD2DC437260038361E /* DaySelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySelectorView.swift; sourceTree = "<group>"; };
 		A90F36BF2DC4394B0038361E /* DaySelectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySelectorViewModel.swift; sourceTree = "<group>"; };
-		A90F36C12DC448F10038361E /* PaymentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardView.swift; sourceTree = "<group>"; };
+		A90F36C42DC46DAA0038361E /* PaymentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardView.swift; sourceTree = "<group>"; };
 		A9CB7E9D2DB90BDA00A1FA94 /* K2D-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-SemiBold.ttf"; sourceTree = "<group>"; };
 		A9CB7E9E2DB90BDA00A1FA94 /* K2D-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-Bold.ttf"; sourceTree = "<group>"; };
 		A9CB7E9F2DB90BDA00A1FA94 /* K2D-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-Regular.ttf"; sourceTree = "<group>"; };
@@ -143,6 +143,14 @@
 				A90F36BF2DC4394B0038361E /* DaySelectorViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A90F36C32DC46D980038361E /* PaymentCardView */ = {
+			isa = PBXGroup;
+			children = (
+				A90F36C42DC46DAA0038361E /* PaymentCardView.swift */,
+			);
+			path = PaymentCardView;
 			sourceTree = "<group>";
 		};
 		A9CB7E9C2DB90BDA00A1FA94 /* K2D 2 */ = {
@@ -298,10 +306,10 @@
 		A9CECA2A2DB7412C004EE888 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A90F36C32DC46D980038361E /* PaymentCardView */,
 				A90F36BA2DC436F70038361E /* DaySelectorView */,
 				A9CB7EC12DB9960900A1FA94 /* AuthenticationView */,
 				A9CECA2B2DB741B9004EE888 /* InputTextField */,
-				A90F36C12DC448F10038361E /* PaymentCardView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -422,7 +430,7 @@
 				A90F36BE2DC437260038361E /* DaySelectorView.swift in Sources */,
 				A9CECA212DB72DF7004EE888 /* SplashView.swift in Sources */,
 				A9CECA2D2DB741C7004EE888 /* InputTextField.swift in Sources */,
-				A90F36C22DC448F10038361E /* PaymentCardView.swift in Sources */,
+				A90F36C52DC46DAA0038361E /* PaymentCardView.swift in Sources */,
 				A90F36B52DC422470038361E /* HomeViewController.swift in Sources */,
 				A9CECA252DB730BA004EE888 /* SplashViewModel.swift in Sources */,
 			);
