@@ -109,6 +109,9 @@ final class HomeView: UIView {
     }
     
     private func setupPaymentCard() {
-        paymentCardView.configure(name: "autora Tech Soluções Digitais", value: "R$ 250,00")
+        let transactionModel = PaymentCardModel(type: .incoming,
+                                                name: "Aurora Tech soluções Digitais",
+                                                value: "R$ 250,00")
+        paymentCardView.configure(with: transactionModel)
     }
 }
