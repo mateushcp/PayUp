@@ -13,9 +13,11 @@ final class HomeViewController: UIViewController {
     
     override func loadView() {
         self.view = homeView
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = true
     }
 }
