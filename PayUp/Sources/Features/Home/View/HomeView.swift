@@ -9,34 +9,24 @@ import UIKit
 
 final class HomeView: UIView {
     
-    // MARK: – Scroll + container
+    // MARK: - Scroll + Container
     
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.backgroundColor = Colors.backgroundPrimary
-        scrollView.bounces = true
-        scrollView.alwaysBounceVertical = true
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
     }()
-    
     private let contentView: UIView = {
         let view = UIView()
         view.layoutMargins = UIEdgeInsets(top: 16, left: 24, bottom: 24, right: 24)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = Colors.backgroundPrimary
         return view
     }()
-    
-    // MARK: – Header (logo + sininho + perfil)
     
     private lazy var headerStack: UIStackView = {
         let spacer = UIView()
         let stackView = UIStackView(arrangedSubviews: [
-            logoImage,
-            spacer,
-            bellButton,
-            profileImage
+            logoImage, spacer, bellButton, profileImage
         ])
         stackView.setCustomSpacing(24, after: bellButton)
         stackView.axis = .horizontal
@@ -45,12 +35,15 @@ final class HomeView: UIView {
         return stackView
     }()
     
+    // MARK: - Subviews
+    
     private let logoImage: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "mainLogo"))
         imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             imageView.widthAnchor.constraint(equalToConstant: 82),
-            imageView.heightAnchor.constraint(equalToConstant: 24)
+            imageView.heightAnchor.constraint(equalToConstant: 24),
         ])
         return imageView
     }()
@@ -59,9 +52,10 @@ final class HomeView: UIView {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "bell"), for: .normal)
         button.tintColor = Colors.textHeading
+        button.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             button.widthAnchor.constraint(equalToConstant: 24),
-            button.heightAnchor.constraint(equalToConstant: 24)
+            button.heightAnchor.constraint(equalToConstant: 24),
         ])
         return button
     }()
@@ -71,14 +65,13 @@ final class HomeView: UIView {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 16
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             imageView.widthAnchor.constraint(equalToConstant: 44),
             imageView.heightAnchor.constraint(equalToConstant: 44)
         ])
         return imageView
     }()
-    
-    // MARK: – Day selector
     
     private let daySelectorView: DaySelectorView = {
         let view = DaySelectorView()
@@ -89,14 +82,23 @@ final class HomeView: UIView {
         return view
     }()
     
-    // MARK: – Seção “Hoje”
-    
     private let todayLabel: UILabel = {
         let label = UILabel()
         label.text = "Hoje"
         label.font = Fonts.titleSmall()
         label.textColor = Colors.textHeading
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }()
+    
+    private lazy var todayStack: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [
+            todayLabel, paymentCardView
+        ])
+        stackView.axis = .vertical
+        stackView.spacing = 8
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
     }()
     
     private let paymentCardView: PaymentCardView = {
@@ -105,15 +107,6 @@ final class HomeView: UIView {
         card.heightAnchor.constraint(equalToConstant: 95).isActive = true
         return card
     }()
-    
-    private lazy var todayStack: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [todayLabel, paymentCardView])
-        stackView.axis = .vertical
-        stackView.spacing = 8
-        return stackView
-    }()
-    
-    // MARK: – Botão adicionar cliente
     
     private let addClientButton: UIButton = {
         let button = UIButton(type: .system)
@@ -124,10 +117,9 @@ final class HomeView: UIView {
         button.layer.cornerRadius = 8
         button.translatesAutoresizingMaskIntoConstraints = false
         button.heightAnchor.constraint(equalToConstant: 48).isActive = true
+        // TODO: action
         return button
     }()
-    
-    // MARK: – Seção “Empresas”
     
     private let viewAllButton: UIButton = {
         let button = UIButton(type: .system)
@@ -135,36 +127,39 @@ final class HomeView: UIView {
         button.titleLabel?.font = Fonts.titleSmall()
         button.setTitleColor(Colors.accentBrand, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.heightAnchor.constraint(equalToConstant: 21).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        // TODO: action
         return button
     }()
     
     private let companyListView: CompanyListView = {
-        let models = [
+        let companies = [
             CompanyItemModel(name: "Aurora Tech Soluções Digitais"),
             CompanyItemModel(name: "Veltrix Labs"),
             CompanyItemModel(name: "Rocket Seat"),
             CompanyItemModel(name: "ApertAi Replays")
         ]
-        let view = CompanyListView(companies: models)
+        let view = CompanyListView(companies: companies)
+        view.heightAnchor.constraint(equalToConstant: 144).isActive = true
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.heightAnchor.constraint(equalToConstant: 141).isActive = true
         return view
     }()
     
     private lazy var companySectionStack: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [UIView(), viewAllButton])
+        let stackView = UIStackView(arrangedSubviews: [
+            UIView(), viewAllButton
+        ])
         stackView.axis = .horizontal
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
-    
-    // MARK: – Seção “Lançamentos”
     
     private let transactionLabel: UILabel = {
         let label = UILabel()
         label.text = "Lançamentos"
         label.font = Fonts.titleSmall()
         label.textColor = Colors.textHeading
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -173,10 +168,7 @@ final class HomeView: UIView {
         button.setTitle("Filtrar", for: .normal)
         button.titleLabel?.font = Fonts.paragraphMedium()
         button.setTitleColor(Colors.textHeading, for: .normal)
-        button.setImage(
-          UIImage(systemName: "line.horizontal.3.decrease.circle"),
-          for: .normal
-        )
+        button.setImage(UIImage(systemName: "line.horizontal.3.decrease.circle"), for: .normal)
         button.tintColor = Colors.textHeading
         button.backgroundColor = Colors.backgroundSecondary
         button.layer.cornerRadius = 6
@@ -185,13 +177,17 @@ final class HomeView: UIView {
         button.contentEdgeInsets = UIEdgeInsets(top: 8, left: 12, bottom: 8, right: 12)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        // TODO: action
         return button
     }()
     
     private lazy var transactionHeaderStack: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [transactionLabel, UIView(), filterButton])
-        stackView.axis = .horizontal
+        let stackView = UIStackView(arrangedSubviews: [
+            transactionLabel, UIView(), filterButton
+        ])
         stackView.alignment = .center
+        stackView.axis = .horizontal
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     
@@ -200,6 +196,7 @@ final class HomeView: UIView {
         label.text = "01 de abril"
         label.font = Fonts.paragraphSmall()
         label.textColor = Colors.textParagraph
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -209,9 +206,7 @@ final class HomeView: UIView {
         card.heightAnchor.constraint(equalToConstant: 95).isActive = true
         return card
     }()
-        
-    // MARK: – Main Stack
-
+    
     private lazy var mainStack: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [
             headerStack,
@@ -230,11 +225,11 @@ final class HomeView: UIView {
         return stackView
     }()
 
-    // MARK: – Init
+    // MARK: - Init
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupLayout()
+        setupView()
         setupContent()
     }
 
@@ -242,46 +237,45 @@ final class HomeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: – Layout
+    // MARK: - Layout
 
-    private func setupLayout() {
+    private func setupView() {
         backgroundColor = Colors.backgroundPrimary
 
         addSubview(scrollView)
         scrollView.addSubview(contentView)
+        contentView.addSubview(mainStack)
+
 
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: topAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
             scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
 
             contentView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
-            contentView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
             contentView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor),
-
-            contentView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor)
-        ])
-
-        // 2) mainStack no contentView usando suas layoutMargins
-        contentView.addSubview(mainStack)
-        NSLayoutConstraint.activate([
+            contentView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
+            contentView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor),
+            
             mainStack.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor),
             mainStack.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
             mainStack.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
-            mainStack.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor)
+            mainStack.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor),
         ])
+        
+
     }
 
-    // MARK: – Content
+    // MARK: - Content
 
     private func setupContent() {
         paymentCardView.configure(
-          with: .init(type: .incoming, name: "Aurora Tech Soluções Digitais", value: "R$ 250,00")
+            with: .init(type: .incoming, name: "Aurora Tech Soluções Digitais", value: "R$ 250,00")
         )
         transactionCardView.configure(
-          with: .init(type: .transaction, name: "Aluguel de Abril", value: "R$ 1.200,00")
+            with: .init(type: .transaction, name: "Aluguel de Abril", value: "R$ 1.200,00")
         )
     }
 }
