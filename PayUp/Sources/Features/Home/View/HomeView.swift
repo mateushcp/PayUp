@@ -8,7 +8,8 @@
 import UIKit
 
 final class HomeView: UIView {
-    
+    var onTapAddClient: (() -> Void)?
+
     // MARK: - Scroll + Container
     
     private let scrollView: UIScrollView = {
@@ -117,9 +118,16 @@ final class HomeView: UIView {
         button.layer.cornerRadius = 8
         button.translatesAutoresizingMaskIntoConstraints = false
         button.heightAnchor.constraint(equalToConstant: 48).isActive = true
+        button.addTarget(nil, action: #selector(didTapAddClient), for: .touchUpInside)
+
         // TODO: action
         return button
     }()
+    
+    @objc
+    private func didTapAddClient() {
+        onTapAddClient?()
+    }
     
     private let viewAllButton: UIButton = {
         let button = UIButton(type: .system)
