@@ -9,7 +9,6 @@ import UIKit
 
 final class HomeView: UIView {
     var onTapAddClient: (() -> Void)?
-
     // MARK: - Scroll + Container
     
     private let scrollView: UIScrollView = {
@@ -118,17 +117,12 @@ final class HomeView: UIView {
         button.layer.cornerRadius = 8
         button.translatesAutoresizingMaskIntoConstraints = false
         button.heightAnchor.constraint(equalToConstant: 48).isActive = true
-        button.addTarget(nil, action: #selector(didTapAddClient), for: .touchUpInside)
+        button.addTarget(self, action: #selector(didTapAddClient), for: .touchUpInside)
 
         // TODO: action
         return button
     }()
-    
-    @objc
-    private func didTapAddClient() {
-        onTapAddClient?()
-    }
-    
+
     private let viewAllButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Ver todos", for: .normal)
@@ -285,5 +279,10 @@ final class HomeView: UIView {
         transactionCardView.configure(
             with: .init(type: .transaction, name: "Aluguel de Abril", value: "R$ 1.200,00")
         )
+    }
+    
+    @objc
+    private func didTapAddClient() {
+        onTapAddClient?()
     }
 }

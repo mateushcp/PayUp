@@ -12,6 +12,8 @@
 		A90F36BE2DC437260038361E /* DaySelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F36BD2DC437260038361E /* DaySelectorView.swift */; };
 		A90F36C02DC4394B0038361E /* DaySelectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F36BF2DC4394B0038361E /* DaySelectorViewModel.swift */; };
 		A90F36C52DC46DAA0038361E /* PaymentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F36C42DC46DAA0038361E /* PaymentCardView.swift */; };
+		A92A19962E11FBAC0032D1F4 /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A19952E11FBA50032D1F4 /* CurrencyTextField.swift */; };
+		A92A19982E11FBB70032D1F4 /* DatePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A19972E11FBB00032D1F4 /* DatePickerTextField.swift */; };
 		A98F80D82DFF537F00D12B7E /* PaymentCardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98F80D72DFF536E00D12B7E /* PaymentCardType.swift */; };
 		A98F80DA2DFF556900D12B7E /* PaymentCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98F80D92DFF556500D12B7E /* PaymentCardModel.swift */; };
 		A9CB7EAE2DB90BDB00A1FA94 /* K2D-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9CB7E9D2DB90BDA00A1FA94 /* K2D-SemiBold.ttf */; };
@@ -32,6 +34,10 @@
 		A9CB7EBD2DB90BDB00A1FA94 /* K2D-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9CB7EAC2DB90BDA00A1FA94 /* K2D-ExtraBoldItalic.ttf */; };
 		A9CB7EBE2DB90BDB00A1FA94 /* K2D-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9CB7EAD2DB90BDA00A1FA94 /* K2D-Medium.ttf */; };
 		A9CB7EC32DB9961600A1FA94 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB7EC22DB9961600A1FA94 /* AuthenticationView.swift */; };
+		A9CC8A152E11F07F005CD5F1 /* ClientFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC8A142E11F077005CD5F1 /* ClientFormViewController.swift */; };
+		A9CC8A172E11F085005CD5F1 /* ClientFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC8A162E11F083005CD5F1 /* ClientFormView.swift */; };
+		A9CC8A192E11F093005CD5F1 /* ClientFormViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC8A182E11F08E005CD5F1 /* ClientFormViewDelegate.swift */; };
+		A9CC8A1B2E11F0BB005CD5F1 /* ClientFormMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC8A1A2E11F0B9005CD5F1 /* ClientFormMode.swift */; };
 		A9CEC98D2DB6E960004EE888 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CEC98C2DB6E960004EE888 /* AppDelegate.swift */; };
 		A9CEC98F2DB6E960004EE888 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CEC98E2DB6E960004EE888 /* SceneDelegate.swift */; };
 		A9CEC9962DB6E963004EE888 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9CEC9952DB6E963004EE888 /* Assets.xcassets */; };
@@ -56,6 +62,8 @@
 		A90F36BD2DC437260038361E /* DaySelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySelectorView.swift; sourceTree = "<group>"; };
 		A90F36BF2DC4394B0038361E /* DaySelectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySelectorViewModel.swift; sourceTree = "<group>"; };
 		A90F36C42DC46DAA0038361E /* PaymentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardView.swift; sourceTree = "<group>"; };
+		A92A19952E11FBA50032D1F4 /* CurrencyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
+		A92A19972E11FBB00032D1F4 /* DatePickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTextField.swift; sourceTree = "<group>"; };
 		A98F80D72DFF536E00D12B7E /* PaymentCardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardType.swift; sourceTree = "<group>"; };
 		A98F80D92DFF556500D12B7E /* PaymentCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardModel.swift; sourceTree = "<group>"; };
 		A9CB7E9D2DB90BDA00A1FA94 /* K2D-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -76,6 +84,10 @@
 		A9CB7EAC2DB90BDA00A1FA94 /* K2D-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		A9CB7EAD2DB90BDA00A1FA94 /* K2D-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "K2D-Medium.ttf"; sourceTree = "<group>"; };
 		A9CB7EC22DB9961600A1FA94 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		A9CC8A142E11F077005CD5F1 /* ClientFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientFormViewController.swift; sourceTree = "<group>"; };
+		A9CC8A162E11F083005CD5F1 /* ClientFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientFormView.swift; sourceTree = "<group>"; };
+		A9CC8A182E11F08E005CD5F1 /* ClientFormViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientFormViewDelegate.swift; sourceTree = "<group>"; };
+		A9CC8A1A2E11F0B9005CD5F1 /* ClientFormMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientFormMode.swift; sourceTree = "<group>"; };
 		A9CEC9892DB6E960004EE888 /* PayUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9CEC98C2DB6E960004EE888 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9CEC98E2DB6E960004EE888 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +177,14 @@
 			path = PaymentCardView;
 			sourceTree = "<group>";
 		};
+		A92A19942E11FB910032D1F4 /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				A92A19972E11FBB00032D1F4 /* DatePickerTextField.swift */,
+			);
+			path = DatePicker;
+			sourceTree = "<group>";
+		};
 		A9CB7E9C2DB90BDA00A1FA94 /* K2D 2 */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +215,40 @@
 				A9CB7EC22DB9961600A1FA94 /* AuthenticationView.swift */,
 			);
 			path = AuthenticationView;
+			sourceTree = "<group>";
+		};
+		A9CC8A112E11F06A005CD5F1 /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				A9CC8A132E11F073005CD5F1 /* ViewModel */,
+				A9CC8A122E11F070005CD5F1 /* View */,
+			);
+			path = Form;
+			sourceTree = "<group>";
+		};
+		A9CC8A122E11F070005CD5F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A9CC8A182E11F08E005CD5F1 /* ClientFormViewDelegate.swift */,
+				A9CC8A162E11F083005CD5F1 /* ClientFormView.swift */,
+				A9CC8A142E11F077005CD5F1 /* ClientFormViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A9CC8A132E11F073005CD5F1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A9CC8A1C2E11FB4A005CD5F1 /* Currency */ = {
+			isa = PBXGroup;
+			children = (
+				A92A19952E11FBA50032D1F4 /* CurrencyTextField.swift */,
+			);
+			path = Currency;
 			sourceTree = "<group>";
 		};
 		A9CEC9802DB6E960004EE888 = {
@@ -283,6 +337,7 @@
 		A9CEC9AD2DB6EF72004EE888 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				A9CC8A112E11F06A005CD5F1 /* Form */,
 				A90F36B12DC422270038361E /* Home */,
 				A9CECA1F2DB72DEB004EE888 /* Splash */,
 			);
@@ -318,6 +373,8 @@
 		A9CECA2A2DB7412C004EE888 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A92A19942E11FB910032D1F4 /* DatePicker */,
+				A9CC8A1C2E11FB4A005CD5F1 /* Currency */,
 				A9D613E12DD16164004EBDA8 /* Company */,
 				A90F36C32DC46D980038361E /* PaymentCardView */,
 				A90F36BA2DC436F70038361E /* DaySelectorView */,
@@ -338,6 +395,7 @@
 		A9CECA2E2DB741FE004EE888 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A9CC8A1A2E11F0B9005CD5F1 /* ClientFormMode.swift */,
 				A98F80D92DFF556500D12B7E /* PaymentCardModel.swift */,
 				A98F80D72DFF536E00D12B7E /* PaymentCardType.swift */,
 				A9CECA2F2DB74212004EE888 /* InputTextFieldType.swift */,
@@ -461,9 +519,14 @@
 				A90F36C02DC4394B0038361E /* DaySelectorViewModel.swift in Sources */,
 				A9CEC9AA2DB6EBD5004EE888 /* Fonts.swift in Sources */,
 				A98F80D82DFF537F00D12B7E /* PaymentCardType.swift in Sources */,
+				A9CC8A152E11F07F005CD5F1 /* ClientFormViewController.swift in Sources */,
+				A9CC8A1B2E11F0BB005CD5F1 /* ClientFormMode.swift in Sources */,
 				A90F36B72DC422540038361E /* HomeView.swift in Sources */,
+				A92A19962E11FBAC0032D1F4 /* CurrencyTextField.swift in Sources */,
+				A9CC8A172E11F085005CD5F1 /* ClientFormView.swift in Sources */,
 				A9CEC98D2DB6E960004EE888 /* AppDelegate.swift in Sources */,
 				A9D613EB2DD16C3E004EBDA8 /* CompanyListView.swift in Sources */,
+				A9CC8A192E11F093005CD5F1 /* ClientFormViewDelegate.swift in Sources */,
 				A9CB7EC32DB9961600A1FA94 /* AuthenticationView.swift in Sources */,
 				A9CECA322DB7437D004EE888 /* UITextField+Ext.swift in Sources */,
 				A9CEC9AC2DB6EC19004EE888 /* UIView+Ext.swift in Sources */,
@@ -477,6 +540,7 @@
 				A9CECA212DB72DF7004EE888 /* SplashView.swift in Sources */,
 				A9CECA2D2DB741C7004EE888 /* InputTextField.swift in Sources */,
 				A9D613E92DD1622E004EBDA8 /* CompanyCell.swift in Sources */,
+				A92A19982E11FBB70032D1F4 /* DatePickerTextField.swift in Sources */,
 				A90F36C52DC46DAA0038361E /* PaymentCardView.swift in Sources */,
 				A90F36B52DC422470038361E /* HomeViewController.swift in Sources */,
 				A9D613E52DD161B7004EBDA8 /* CompanyItemModel.swift in Sources */,

@@ -19,14 +19,16 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
-        
-        homeView.onTapAddClient = { [weak self] in
+        setupCallForAddClient()
+    }
+    
+    private func setupCallForAddClient() {
+        homeView.onTapAddClient = { [ weak self ] in
             guard let self = self else { return }
-            // 2) crie e apresente o form
-            let formVC = ClientFormViewController(mode: .add)
-            formVC.modalPresentationStyle = .overFullScreen
-            formVC.modalTransitionStyle = .coverVertical
-            self.present(formVC, animated: true)
+            let formViewController = ClientFormViewController(mode: .add)
+            formViewController.modalTransitionStyle = .coverVertical
+            formViewController.modalPresentationStyle = .overFullScreen
+            self.present(formViewController, animated: true)
         }
     }
 }
