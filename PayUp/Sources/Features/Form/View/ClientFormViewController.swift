@@ -72,18 +72,4 @@ extension ClientFormViewController: ClientFormViewDelegate {
         })
         present(alert, animated: true)
     }
-    
-    func didTapDelete() {
-        let alert = UIAlertController(title: "Excluir cliente", 
-                                     message: "Tem certeza que deseja excluir este cliente?", 
-                                     preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel))
-        alert.addAction(UIAlertAction(title: "Excluir", style: .destructive) { _ in
-            // TODO: Implement delete logic
-            self.dismiss(animated: true)
-        })
-        
-        present(alert, animated: true)
-    }
 }

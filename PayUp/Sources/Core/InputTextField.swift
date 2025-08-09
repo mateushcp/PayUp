@@ -85,8 +85,6 @@ final class InputTextFieldView: UIView {
             maskPhoneNumber()
         case .cnpj:
             maskCNPJ()
-        case .date:
-            maskDate()
         }
     }
     
