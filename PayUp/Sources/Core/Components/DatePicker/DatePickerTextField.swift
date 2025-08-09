@@ -98,10 +98,11 @@ final class DatePickerTextField: UIView {
     }
     
     func setText(_ text: String) {
-        textField.text = text
+        self.textField.text = text
     }
     
     func getText() -> String? {
-        return textField.text
+        return self.textField.text
     }
+    
 }

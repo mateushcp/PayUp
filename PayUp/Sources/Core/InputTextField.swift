@@ -85,6 +85,8 @@ final class InputTextFieldView: UIView {
             maskPhoneNumber()
         case .cnpj:
             maskCNPJ()
+        case .date:
+            maskDate()
         }
     }
     
@@ -122,11 +124,11 @@ final class InputTextFieldView: UIView {
     }
     
     func setText(_ text: String) {
-        textField.text = text
+        self.textField.text = text
     }
     
     func getText() -> String? {
-        return textField.text
+        return self.textField.text
     }
     
 }

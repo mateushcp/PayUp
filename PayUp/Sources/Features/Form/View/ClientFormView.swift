@@ -25,49 +25,53 @@ final class ClientFormView: UIView {
         label.text = mode == .add ? "Adicionar cliente" : "Editar cliente"
         label.font = Fonts.titleSmall()
         label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
-    private lazy var valueField = CurrencyTextField(title: "Valor", placeholder: "R$ 0,00")
-    private lazy var dateField = DatePickerTextField(title: "Data de cobrança", placeholder: "DD/MM/AAAA")
     
     private let recurringLabel: UILabel = {
         let label = UILabel()
         label.text = "Cobrança recorrente?"
         label.font = Fonts.titleSmall()
         label.textColor = Colors.textHeading
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private let recurringSwitch: UISwitch = {
-        let switchControl = UISwitch()
-        switchControl.onTintColor = Colors.accentBrand
-        return switchControl
+        let switchView = UISwitch()
+        switchView.onTintColor = Colors.accentBrand
+        switchView.translatesAutoresizingMaskIntoConstraints = false
+        return switchView
     }()
     
     private let frequencyButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Mensalmente ▾", for: .normal)
-        button.titleLabel?.font = Fonts.paragraphMedium()
+        let button = UIButton()
+        button.setTitle("Mensalmente", for: .normal)
         button.setTitleColor(Colors.textLabel, for: .normal)
+        button.titleLabel?.font = Fonts.paragraphMedium()
         button.backgroundColor = .clear
-        button.contentHorizontalAlignment = .left
+        button.contentHorizontalAlignment = .leading
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
-    private let frequencyOptions = ["Mensalmente", "Semanalmente", "Semestralmente", "Anualmente"]
+    private let frequencyOptions = [
+        "Mensalmente", "Semanalmente", "Anualmente"
+    ]
     private var selectedFrequency = "Mensalmente"
     
     private lazy var daySelectorView = DaySelectorView()
-    
-    private lazy var clientNameField = InputTextFieldView(title: "Nome do cliente", placeholder: "Ex: João Silva | Loja do Bairro", type: .normal)
+    private lazy var clientNameField = InputTextFieldView(title: "Nome do Cliente", placeholder: "Ex: Joao Sila | Loja Bairro", type: .normal)
     private lazy var contactField = InputTextFieldView(title: "Contato", placeholder: "Ex: joao@exemplo.com", type: .normal)
-    private lazy var phoneField = InputTextFieldView(title: "Telefone", placeholder: "Ex: (11) 91234-5678", type: .cellphone)
-    private lazy var cnpjField = InputTextFieldView(title: "CNPJ", placeholder: "Ex: 12.345.678/0001-90", type: .cnpj)
-    private lazy var addressField = InputTextFieldView(title: "Endereço", placeholder: "Ex: Rua das Flores, 123 – Centro, São Paulo – SP", type: .normal)
+    private lazy var phoneField = InputTextFieldView(title: "Telefone", placeholder: "Ex (31) 91234-5678", type: .cellphone)
+    private lazy var cnpjField = InputTextFieldView(title: "CNPJ", placeholder: "12.345.678/0001-99", type: .cnpj)
+    private lazy var adressField = InputTextFieldView(title: "Endereço", placeholder: "Ex: Rua das Flores, 123, Centro", type: .normal)
+    private lazy var valueField = CurrencyTextField(title: "Valor", placeholder: "R$ 0,00")
+    private lazy var dateField = DatePickerTextField(title: "Data de cobrança", placeholder: "DD/MM/AAAA")
     
     private let cancelButton: UIButton = {
-        let button = UIButton(type: .system)
+        let button = UIButton()
         button.setTitle("Cancelar", for: .normal)
         button.setTitleColor(Colors.textLabel, for: .normal)
         button.titleLabel?.font = Fonts.titleSmall()
@@ -78,9 +82,9 @@ final class ClientFormView: UIView {
     }()
     
     private lazy var saveButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle(mode == .add ? "Salvar alterações" : "Salvar alterações", for: .normal)
-        button.setTitleColor(.white, for: .normal)
+        let button = UIButton()
+        button.setTitle(mode == .add ? "Salvar" : "Salvar alteraçoes", for: .normal)
+        button.setTitleColor(Colors.backgroundPrimary, for: .normal)
         button.titleLabel?.font = Fonts.titleSmall()
         button.backgroundColor = Colors.accentBrand
         button.layer.cornerRadius = 8
@@ -89,7 +93,7 @@ final class ClientFormView: UIView {
     }()
     
     private lazy var deleteButton: UIButton = {
-        let button = UIButton(type: .system)
+        let button = UIButton()
         button.setImage(UIImage(systemName: "trash"), for: .normal)
         button.tintColor = Colors.accentRed
         button.backgroundColor = Colors.backgroundTertiary
@@ -124,24 +128,21 @@ final class ClientFormView: UIView {
     }
     
     private func setupStack() {
-        let scrollView = UIScrollView()
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.showsVerticalScrollIndicator = false
+        setupActions()
+        let scrollview = UIScrollView()
+        scrollview.translatesAutoresizingMaskIntoConstraints = false
+        scrollview.showsVerticalScrollIndicator = false
         
         let recurringContainer = UIView()
-        let recurringStack = UIStackView(arrangedSubviews: [recurringLabel, recurringSwitch, frequencyButton])
+        let recurringStack = UIStackView(arrangedSubviews: [
+            recurringLabel,
+            recurringSwitch,
+            frequencyButton])
         recurringStack.axis = .horizontal
         recurringStack.spacing = 8
         recurringStack.alignment = .center
         recurringStack.translatesAutoresizingMaskIntoConstraints = false
         recurringContainer.addSubview(recurringStack)
-        
-        NSLayoutConstraint.activate([
-            recurringStack.topAnchor.constraint(equalTo: recurringContainer.topAnchor),
-            recurringStack.leadingAnchor.constraint(equalTo: recurringContainer.leadingAnchor),
-            recurringStack.trailingAnchor.constraint(lessThanOrEqualTo: recurringContainer.trailingAnchor),
-            recurringStack.bottomAnchor.constraint(equalTo: recurringContainer.bottomAnchor)
-        ])
         
         let buttonStack = UIStackView()
         if mode == .edit {
@@ -153,6 +154,7 @@ final class ClientFormView: UIView {
         buttonStack.spacing = 12
         buttonStack.distribution = .fillEqually
         
+        
         let formStack = UIStackView(arrangedSubviews: [
             titleLabel,
             valueField,
@@ -163,31 +165,45 @@ final class ClientFormView: UIView {
             contactField,
             phoneField,
             cnpjField,
-            addressField,
+            adressField,
             buttonStack
         ])
         
         formStack.axis = .vertical
         formStack.spacing = 16
         formStack.translatesAutoresizingMaskIntoConstraints = false
-        
-        scrollView.addSubview(formStack)
-        containerView.addSubview(scrollView)
+        scrollview.addSubview(formStack)
+        containerView.addSubview(scrollview)
         
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 12),
-            scrollView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 24),
-            scrollView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -24),
-            scrollView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -24),
+            scrollview.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 12),
+            scrollview.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 24),
+            scrollview.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -24),
+            scrollview.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -24),
             
-            formStack.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            formStack.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            formStack.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            formStack.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            formStack.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            formStack.topAnchor.constraint(equalTo: scrollview.topAnchor),
+            formStack.leadingAnchor.constraint(equalTo: scrollview.leadingAnchor),
+            formStack.trailingAnchor.constraint(equalTo: scrollview.trailingAnchor),
+            formStack.bottomAnchor.constraint(equalTo: scrollview.bottomAnchor),
+            formStack.widthAnchor.constraint(equalTo: scrollview.widthAnchor),
             
             cancelButton.heightAnchor.constraint(equalToConstant: 44),
-            saveButton.heightAnchor.constraint(equalToConstant: 44)
+            saveButton.heightAnchor.constraint(equalToConstant: 44),
+        ])
+        
+        if mode == .edit {
+            NSLayoutConstraint.activate([
+                deleteButton.heightAnchor.constraint(equalToConstant: 44),
+                deleteButton.widthAnchor.constraint(equalToConstant: 44),
+            ])
+        }
+        
+        NSLayoutConstraint.activate([
+            recurringStack.topAnchor.constraint(equalTo: recurringContainer.topAnchor),
+            recurringStack.leadingAnchor.constraint(equalTo: recurringContainer.leadingAnchor),
+            recurringStack.trailingAnchor.constraint(equalTo: recurringContainer.trailingAnchor),
+            recurringStack.bottomAnchor.constraint(equalTo: recurringContainer.bottomAnchor),
+            
         ])
         
         if mode == .edit {
@@ -265,6 +281,65 @@ final class ClientFormView: UIView {
         addressField.setText("Rua das Inovações, 123 – Bairro Criativo, São Paulo – SP, 04500-000")
         recurringSwitch.isOn = true
         recurringToggled()
+    }
+    
+    private func setupActions() {
+        recurringSwitch.addTarget(self, action: #selector(recurringToggled), for: .valueChanged)
+        frequencyButton.addTarget(self, action: #selector(frequencyTapped), for: .touchUpInside)
+        cancelButton.addTarget(self, action: #selector(cancelTapped), for: .touchUpInside)
+        saveButton.addTarget(self, action: #selector(saveTapped), for: .touchUpInside)
+    }
+    
+    @objc
+    private func recurringToggled() {
+        daySelectorView.isHidden = !recurringSwitch.isOn
+        frequencyButton.isHidden = !recurringSwitch.isOn
+    }
+    
+    @objc
+    private func frequencyTapped() {
+        let alert = UIAlertController(title: "Frequency", message: "Selecione a frequencia de cobrança", preferredStyle: .actionSheet)
+        
+        for option in frequencyOptions {
+            let action = UIAlertAction(title: option, style: .default) { [weak self] _ in
+                self?.selectedFrequency = option
+                self?.frequencyButton.setTitle(option, for: .normal)
+            }
+            alert.addAction(action)
+        }
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel))
+        
+        if let viewController  = self.parentViewController() {
+            viewController.present(alert, animated: true)
+        }
+    }
+    
+    @objc
+    private func cancelTapped() {
+        delegate?.didTapCancel()
+    }
+    
+    @objc
+    private func saveTapped() {
+        delegate?.didTapSave()
+    }
+    
+    @objc
+    private func deleteTapped() {
+        delegate?.didTapDelete()
+    }
+    
+    private func setupInitialState() {
+        daySelectorView.isHidden = !recurringSwitch.isOn
+        frequencyButton.isHidden = !recurringSwitch.isOn
+        
+        if mode == .edit {
+//            populateFieldsForEditMode()
+        }
+    }
+    
+    private func populateFieldsForEditMode() {
+        //
     }
     
 }
