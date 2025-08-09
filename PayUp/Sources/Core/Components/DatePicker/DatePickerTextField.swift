@@ -96,4 +96,12 @@ final class DatePickerTextField: UIView {
             viewController.present(alert, animated: true)
         }
     }
+    
+    func setText(_ text: String) {
+        textField.text = text
+    }
+    
+    func getText() -> String? {
+        return textField.text
+    }
 }

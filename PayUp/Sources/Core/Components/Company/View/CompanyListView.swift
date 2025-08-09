@@ -8,8 +8,13 @@
 import Foundation
 import UIKit
 
+protocol CompanyListViewDelegate: AnyObject {
+    func didSelectCompany(_ company: CompanyItemModel)
+}
+
 final class CompanyListView: UIView {
     private let viewModel: CompanyViewModel
+    weak var delegate: CompanyListViewDelegate?
     
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
