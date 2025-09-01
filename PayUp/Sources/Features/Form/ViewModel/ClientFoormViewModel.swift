@@ -10,13 +10,8 @@ import Foundation
 final class ClientFormViewModel {
     private let databaseManager = DatabaseManager.shared
     
-    func saveClient(client: Client) {
-        
-        let cleanValue = client.value.replacingOccurrences(of: "R$", with: "").replacingOccurrences(of: ",", with: "")
-        let DoubleValue = Double(cleanValue) ?? 0.0
-        
+    func saveClient(client: Client) -> Bool {
         return databaseManager.saveClient(client)
-        
     }
     
     func getAllClients() -> [Client] {
@@ -25,5 +20,9 @@ final class ClientFormViewModel {
     
     func getClientById(id: Int) -> Client? {
         return databaseManager.getClient(by: id)
+    }
+    
+    func deleteClient(id: Int) -> Bool {
+        return databaseManager.deleteClient(by: id)
     }
 }

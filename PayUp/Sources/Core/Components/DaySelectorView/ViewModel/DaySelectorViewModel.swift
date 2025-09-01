@@ -10,6 +10,7 @@ import Foundation
 final class DaySelectorViewModel {
     let days = ["SEG", "TER", "QUA", "QUI", "SEX", "SAB", "DOM"]
     private let calendar = Calendar.current
+    private var currentSelectedIndex: Int
     
     var onDaySelected: ((Int) -> Void)?
     var selectedIndex: Int {
@@ -18,7 +19,17 @@ final class DaySelectorViewModel {
     }
     
     
+    init() {
+        let weekday = calendar.component(.weekday, from: Date())
+        currentSelectedIndex = (weekday + 5) % 7
+    }
+    
     func selectDay(at index: Int) {
+        currentSelectedIndex = index
         onDaySelected?(index)
+    }
+    
+    func getSelectedDay() -> Int? {
+        return currentSelectedIndex + 1
     }
 }

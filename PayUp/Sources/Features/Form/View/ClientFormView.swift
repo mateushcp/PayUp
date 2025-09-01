@@ -216,6 +216,35 @@ final class ClientFormView: UIView {
         setupActions()
     }
     
+    func getClientData() -> Client? {
+        guard let name = clientNameField.getText(), !name.isEmpty,
+              let contact = contactField.getText(), !contact.isEmpty,
+              let phone = phoneField.getText(), !phone.isEmpty,
+              let cnpj = phoneField.getText(), !cnpj.isEmpty,
+              let address = adressField.getText(), !address.isEmpty,
+              let dueDate = dateField.getText(), !dueDate.isEmpty
+        else {
+            return nil
+        }
+        
+        let value = valueField.getValue()
+        let selectedDay = daySelectorView.getSelectedDay()
+        
+        return Client(
+            name: name,
+            contact: contact,
+            phone: phone,
+            cnpj: cnpj,
+            address: address,
+            value: value,
+            dueDate: dueDate,
+            isRecurring: recurringSwitch.isOn,
+            frequency: selectedFrequency,
+            selectedDay: selectedDay
+            
+        )
+    }
+    
     private func setupActions() {
         recurringSwitch.addTarget(self, action: #selector(recurringToggled), for: .valueChanged)
         frequencyButton.addTarget(self, action: #selector(frequencyTapped), for: .touchUpInside)

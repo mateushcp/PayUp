@@ -93,5 +93,8 @@ final class DaySelectorView: UIView {
         }
     }
     
+    func getSelectedDay() -> Int? {
+        return viewModel.getSelectedDay()
+    }
 
 }
