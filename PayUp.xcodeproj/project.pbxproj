@@ -54,6 +54,9 @@
 		A9D613E72DD161DF004EBDA8 /* CompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D613E62DD161DF004EBDA8 /* CompanyViewModel.swift */; };
 		A9D613E92DD1622E004EBDA8 /* CompanyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D613E82DD1622E004EBDA8 /* CompanyCell.swift */; };
 		A9D613EB2DD16C3E004EBDA8 /* CompanyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D613EA2DD16C3E004EBDA8 /* CompanyListView.swift */; };
+		A9EA0B1F2E46F11A00C9B86F /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EA0B1E2E46F11600C9B86F /* DatabaseManager.swift */; };
+		A9EA0B212E46F30700C9B86F /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EA0B202E46F30400C9B86F /* Client.swift */; };
+		A9EA0B262E46F8A300C9B86F /* ClientFoormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EA0B252E46F89C00C9B86F /* ClientFoormViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +109,9 @@
 		A9D613E62DD161DF004EBDA8 /* CompanyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyViewModel.swift; sourceTree = "<group>"; };
 		A9D613E82DD1622E004EBDA8 /* CompanyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyCell.swift; sourceTree = "<group>"; };
 		A9D613EA2DD16C3E004EBDA8 /* CompanyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListView.swift; sourceTree = "<group>"; };
+		A9EA0B1E2E46F11600C9B86F /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		A9EA0B202E46F30400C9B86F /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		A9EA0B252E46F89C00C9B86F /* ClientFoormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientFoormViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +245,7 @@
 		A9CC8A132E11F073005CD5F1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A9EA0B252E46F89C00C9B86F /* ClientFoormViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -300,6 +307,7 @@
 		A9CEC9A22DB6EB4D004EE888 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A9EA0B1D2E46F0FE00C9B86F /* Dat */,
 				A9CECA2E2DB741FE004EE888 /* Model */,
 				A9CECA2A2DB7412C004EE888 /* Components */,
 				A9CEC9A52DB6EB61004EE888 /* Extensions */,
@@ -395,6 +403,7 @@
 		A9CECA2E2DB741FE004EE888 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A9EA0B202E46F30400C9B86F /* Client.swift */,
 				A9CC8A1A2E11F0B9005CD5F1 /* ClientFormMode.swift */,
 				A98F80D92DFF556500D12B7E /* PaymentCardModel.swift */,
 				A98F80D72DFF536E00D12B7E /* PaymentCardType.swift */,
@@ -428,6 +437,14 @@
 				A9D613E62DD161DF004EBDA8 /* CompanyViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A9EA0B1D2E46F0FE00C9B86F /* Dat */ = {
+			isa = PBXGroup;
+			children = (
+				A9EA0B1E2E46F11600C9B86F /* DatabaseManager.swift */,
+			);
+			path = Dat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -518,6 +535,8 @@
 			files = (
 				A90F36C02DC4394B0038361E /* DaySelectorViewModel.swift in Sources */,
 				A9CEC9AA2DB6EBD5004EE888 /* Fonts.swift in Sources */,
+				A9EA0B1F2E46F11A00C9B86F /* DatabaseManager.swift in Sources */,
+				A9EA0B262E46F8A300C9B86F /* ClientFoormViewModel.swift in Sources */,
 				A98F80D82DFF537F00D12B7E /* PaymentCardType.swift in Sources */,
 				A9CC8A152E11F07F005CD5F1 /* ClientFormViewController.swift in Sources */,
 				A9CC8A1B2E11F0BB005CD5F1 /* ClientFormMode.swift in Sources */,
@@ -542,6 +561,7 @@
 				A9D613E92DD1622E004EBDA8 /* CompanyCell.swift in Sources */,
 				A92A19982E11FBB70032D1F4 /* DatePickerTextField.swift in Sources */,
 				A90F36C52DC46DAA0038361E /* PaymentCardView.swift in Sources */,
+				A9EA0B212E46F30700C9B86F /* Client.swift in Sources */,
 				A90F36B52DC422470038361E /* HomeViewController.swift in Sources */,
 				A9D613E52DD161B7004EBDA8 /* CompanyItemModel.swift in Sources */,
 				A9CECA252DB730BA004EE888 /* SplashViewModel.swift in Sources */,
