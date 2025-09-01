@@ -18,7 +18,9 @@ final class DatabaseManager {
     }
     
     private func openDataBase() {
-        let fileURl = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+        let fileURl = try! FileManager.default
+            .url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            .appendingPathComponent("clients.sqlite")
         
         if sqlite3_open(fileURl.path, &db) != SQLITE_OK {
             print("Unable to open db")

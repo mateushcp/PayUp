@@ -50,6 +50,11 @@ final class CompanyListView: UIView {
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
+    
+    func updateCompanies(_ companies: [CompanyItemModel]) {
+        viewModel.updateCompanies(companies)
+        collectionView.reloadData()
+    }
 
 }
 

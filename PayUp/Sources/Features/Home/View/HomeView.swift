@@ -135,13 +135,7 @@ final class HomeView: UIView {
     }()
     
     private let companyListView: CompanyListView = {
-        let companies = [
-            CompanyItemModel(name: "Aurora Tech Soluções Digitais"),
-            CompanyItemModel(name: "Veltrix Labs"),
-            CompanyItemModel(name: "Rocket Seat"),
-            CompanyItemModel(name: "ApertAi Replays")
-        ]
-        let view = CompanyListView(companies: companies)
+        let view = CompanyListView(companies: [])
         view.heightAnchor.constraint(equalToConstant: 144).isActive = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -273,9 +267,9 @@ final class HomeView: UIView {
     // MARK: - Content
 
     private func setupContent() {
-        paymentCardView.configure(
-            with: .init(type: .incoming, name: "Aurora Tech Soluções Digitais", value: "R$ 250,00")
-        )
+//        paymentCardView.configure(
+//            with: .init(type: .incoming, name: "Aurora Tech Soluções Digitais", value: "R$ 250,00")
+//        )
         transactionCardView.configure(
             with: .init(type: .transaction, name: "Aluguel de Abril", value: "R$ 1.200,00")
         )
@@ -284,5 +278,16 @@ final class HomeView: UIView {
     @objc
     private func didTapAddClient() {
         onTapAddClient?()
+    }
+    
+    // MARK: - Public methods
+    
+    func updateCompanyList(companies: [CompanyItemModel]) {
+        companyListView.updateCompanies(companies)
+    }
+    
+    func updateTodayValue(value: String) {
+        paymentCardView.configure(
+            with: .init(type: .incoming, name: "Recebimentos de hoje", value: value))
     }
 }
