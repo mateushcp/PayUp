@@ -54,15 +54,15 @@ final class DatabaseManager {
         var statement: OpaquePointer?
         
         if sqlite3_prepare_v2(db, insertSQL, -1, &statement, nil) == SQLITE_OK {
-            sqlite3_bind_text(statement, 1, client.name, -1, nil)
-            sqlite3_bind_text(statement, 2, client.contact, -1, nil)
-            sqlite3_bind_text(statement, 3, client.phone, -1, nil)
-            sqlite3_bind_text(statement, 4, client.cnpj, -1, nil)
-            sqlite3_bind_text(statement, 5, client.address, -1, nil)
+            sqlite3_bind_text(statement, 1, NSString(string: client.name).utf8String, -1, nil)
+            sqlite3_bind_text(statement, 2, NSString(string: client.contact).utf8String, -1, nil)
+            sqlite3_bind_text(statement, 3, NSString(string: client.phone).utf8String, -1, nil)
+            sqlite3_bind_text(statement, 4, NSString(string: client.cnpj).utf8String, -1, nil)
+            sqlite3_bind_text(statement, 5, NSString(string: client.address).utf8String, -1, nil)
             sqlite3_bind_double(statement, 6, client.value)
-            sqlite3_bind_text(statement, 7, client.dueDate, -1, nil)
+            sqlite3_bind_text(statement, 7, NSString(string: client.dueDate).utf8String, -1, nil)
             sqlite3_bind_int(statement, 8, client.isRecurring ? 1 : 0)
-            sqlite3_bind_text(statement, 9, client.frequency, -1, nil)
+            sqlite3_bind_text(statement, 9, NSString(string: client.frequency).utf8String, -1, nil)
             
             if let day = client.selectedDay {
                 sqlite3_bind_int(statement, 10, Int32(day))
