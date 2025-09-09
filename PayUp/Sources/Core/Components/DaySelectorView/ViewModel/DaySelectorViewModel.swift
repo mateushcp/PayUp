@@ -32,4 +32,9 @@ final class DaySelectorViewModel {
     func getSelectedDay() -> Int? {
         return currentSelectedIndex + 1
     }
+    
+    func selectDay(_ day: Int) {
+        currentSelectedIndex = day - 1
+        onDaySelected?(currentSelectedIndex)
+    }
 }

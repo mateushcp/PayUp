@@ -49,4 +49,9 @@ final class HomeViewModel {
         formatter.locale = Locale(identifier: "pt_BR")
         return formatter.string(from: NSNumber(value: value)) ?? "RS 0,00"
     }
+    
+    func getClientByName(_ name: String) -> Client? {
+        let allClients = getAllClients()
+        return allClients.first { $0.name == name }
+    }
 }

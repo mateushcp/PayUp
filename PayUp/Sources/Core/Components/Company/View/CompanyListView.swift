@@ -79,4 +79,9 @@ extension CompanyListView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 128, height: 141)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedCompany = viewModel.companies[indexPath.item]
+        delegate?.didSelectCompany(selectedCompany)
+    }
 }

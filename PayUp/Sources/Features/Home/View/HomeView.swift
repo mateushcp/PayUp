@@ -290,4 +290,8 @@ final class HomeView: UIView {
         paymentCardView.configure(
             with: .init(type: .incoming, name: "Recebimentos de hoje", value: value))
     }
+    
+    func setCompanyListDelegate(_ delegate: CompanyListViewDelegate) {
+        companyListView.delegate = delegate
+    }
 }

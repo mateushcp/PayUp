@@ -79,8 +79,18 @@ extension ClientFormViewController: ClientFormViewDelegate {
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel))
         alert.addAction(UIAlertAction(title: "Excluir", style: .destructive) { _ in
-            // TODO: implementar logica de deletar
-            self.dismiss(animated: true)
+            guard case .edit(let client) = self.mode,
+                  let clientId = client.id else {
+                self.showAlert(title: "Erro", message: "Não foi possível identificar o cliente para exclusão")
+                return
+            }
+            
+            let success = self.viewModel.deleteClient(by: clientId)
+            if success {
+                self.dismiss(animated: true)
+            } else {
+                self.showAlert(title: "Erro", message: "Não foi possível excluir o cliente do banco de dados")
+            }
         })
         present(alert, animated: true)
     }

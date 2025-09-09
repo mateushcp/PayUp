@@ -21,6 +21,7 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
         setupCallForAddClient()
+        setupCompanyListDelegate()
         loadData()
     }
     
@@ -46,5 +47,23 @@ final class HomeViewController: UIViewController {
         
         homeView.updateCompanyList(companies: clients)
         homeView.updateTodayValue(value: formatedVallue)
+    }
+    
+    private func setupCompanyListDelegate() {
+        homeView.setCompanyListDelegate(self)
+    }
+}
+
+extension HomeViewController: CompanyListViewDelegate {
+    func didSelectCompany(_ company: CompanyItemModel) {
+        guard let client = viewModel.getClientByName(company.name) else {
+            print("Cliente não encontrado para edição")
+            return
+        }
+        
+        let formViewController = ClientFormViewController(mode: .edit(client))
+        formViewController.modalTransitionStyle = .coverVertical
+        formViewController.modalPresentationStyle = .overFullScreen
+        self.present(formViewController, animated: true)
     }
 }

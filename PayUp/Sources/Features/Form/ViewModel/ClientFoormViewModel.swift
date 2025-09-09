@@ -22,7 +22,7 @@ final class ClientFormViewModel {
         return databaseManager.getClient(by: id)
     }
     
-    func deleteClient(id: Int) -> Bool {
+    func deleteClient(by id: Int) -> Bool {
         return databaseManager.deleteClient(by: id)
     }
 }

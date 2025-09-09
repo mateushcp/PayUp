@@ -80,4 +80,12 @@ final class CurrencyTextField: UIView {
         return Double(cleanText) ?? 0.0
         
     }
+    
+    func setValue(_ value: Double) {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.currencyCode = "BRL"
+        formatter.locale = Locale(identifier: "pt_BR")
+        textField.text = formatter.string(from: NSNumber(value: value)) ?? "R$ 0,00"
+    }
 }

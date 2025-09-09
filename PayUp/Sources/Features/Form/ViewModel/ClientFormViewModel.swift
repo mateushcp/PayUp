@@ -8,10 +8,14 @@ final class ClientFormViewModel {
     }
     
     func getAllClients() -> [Client] {
-        return databaseManager.getClients()
+        return databaseManager.getClient()
     }
     
     func getClient(by id: Int) -> Client? {
         return databaseManager.getClient(by: id)
+    }
+    
+    func deleteClient(by id: Int) -> Bool {
+        return databaseManager.deleteClient(by: id)
     }
 }

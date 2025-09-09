@@ -96,5 +96,10 @@ final class DaySelectorView: UIView {
     func getSelectedDay() -> Int? {
         return viewModel.getSelectedDay()
     }
+    
+    func selectDay(_ day: Int) {
+        viewModel.selectDay(day)
+        updateSelection(index: viewModel.selectedIndex)
+    }
 
 }

@@ -22,7 +22,12 @@ final class ClientFormView: UIView {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = mode == .add ? "Adicionar cliente" : "Editar cliente"
+        switch mode {
+        case .add:
+            label.text = "Adicionar cliente"
+        case .edit:
+            label.text = "Editar cliente"
+        }
         label.font = Fonts.titleSmall()
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -83,7 +88,12 @@ final class ClientFormView: UIView {
     
     private lazy var saveButton: UIButton = {
         let button = UIButton()
-        button.setTitle(mode == .add ? "Salvar" : "Salvar alteraçoes", for: .normal)
+        switch mode {
+        case .add:
+            button.setTitle("Salvar", for: .normal)
+        case .edit:
+            button.setTitle("Salvar alterações", for: .normal)
+        }
         button.setTitleColor(Colors.backgroundPrimary, for: .normal)
         button.titleLabel?.font = Fonts.titleSmall()
         button.backgroundColor = Colors.accentBrand
@@ -145,7 +155,10 @@ final class ClientFormView: UIView {
         recurringContainer.addSubview(recurringStack)
         
         let buttonStack = UIStackView()
-        if mode == .edit {
+        switch mode {
+        case .add:
+            break
+        case .edit:
             buttonStack.addArrangedSubview(deleteButton)
         }
         buttonStack.addArrangedSubview(cancelButton)
@@ -191,7 +204,10 @@ final class ClientFormView: UIView {
             saveButton.heightAnchor.constraint(equalToConstant: 44),
         ])
         
-        if mode == .edit {
+        switch mode {
+        case .add:
+            break
+        case .edit:
             NSLayoutConstraint.activate([
                 deleteButton.heightAnchor.constraint(equalToConstant: 44),
                 deleteButton.widthAnchor.constraint(equalToConstant: 44),
@@ -206,7 +222,10 @@ final class ClientFormView: UIView {
             
         ])
         
-        if mode == .edit {
+        switch mode {
+        case .add:
+            break
+        case .edit:
             NSLayoutConstraint.activate([
                 deleteButton.heightAnchor.constraint(equalToConstant: 44),
                 deleteButton.widthAnchor.constraint(equalToConstant: 44)
@@ -230,7 +249,16 @@ final class ClientFormView: UIView {
         let value = valueField.getValue()
         let selectedDay = daySelectorView.getSelectedDay()
         
+        let clientId: Int?
+        switch mode {
+        case .add:
+            clientId = nil
+        case .edit(let client):
+            clientId = client.id
+        }
+        
         return Client(
+            id: clientId,
             name: name,
             contact: contact,
             phone: phone,
@@ -241,7 +269,6 @@ final class ClientFormView: UIView {
             isRecurring: recurringSwitch.isOn,
             frequency: selectedFrequency,
             selectedDay: selectedDay
-            
         )
     }
     
@@ -251,7 +278,10 @@ final class ClientFormView: UIView {
         cancelButton.addTarget(self, action: #selector(cancelTapped), for: .touchUpInside)
         saveButton.addTarget(self, action: #selector(saveTapped), for: .touchUpInside)
         
-        if mode == .edit {
+        switch mode {
+        case .add:
+            break
+        case .edit:
             deleteButton.addTarget(self, action: #selector(deleteTapped), for: .touchUpInside)
         }
     }
@@ -295,12 +325,30 @@ final class ClientFormView: UIView {
         daySelectorView.isHidden = !recurringSwitch.isOn
         frequencyButton.isHidden = !recurringSwitch.isOn
         
-        if mode == .edit {
-            populateFieldsForEditMode()
+        switch mode {
+        case .add:
+            break
+        case .edit(let client):
+            populateFieldsForEditMode(with: client)
         }
     }
     
-    private func populateFieldsForEditMode() {
-        //
+    private func populateFieldsForEditMode(with client: Client) {
+        clientNameField.setText(client.name)
+        contactField.setText(client.contact)
+        phoneField.setText(client.phone)
+        cnpjField.setText(client.cnpj)
+        adressField.setText(client.address)
+        valueField.setValue(client.value)
+        dateField.setText(client.dueDate)
+        recurringSwitch.isOn = client.isRecurring
+        selectedFrequency = client.frequency
+        frequencyButton.setTitle(client.frequency, for: .normal)
+        
+        if let selectedDay = client.selectedDay {
+            daySelectorView.selectDay(selectedDay)
+        }
+        
+        recurringToggled()
     }
 }
