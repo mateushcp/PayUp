@@ -293,6 +293,10 @@ final class HomeView: UIView {
         companyListView.delegate = delegate
     }
     
+    func setDaySelectorDelegate(_ delegate: DaySelectorViewDelegate) {
+        daySelectorView.delegate = delegate
+    }
+    
     func updateTransactions(_ transactions: [PaymentCardModel]) {
         transactionStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
         

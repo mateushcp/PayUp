@@ -22,6 +22,7 @@ final class HomeViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         setupCallForAddClient()
         setupCompanyListDelegate()
+        setupDaySelectorDelegate()
         setupNotificationObserver()
         loadData()
     }
@@ -58,6 +59,10 @@ final class HomeViewController: UIViewController {
         homeView.setCompanyListDelegate(self)
     }
     
+    private func setupDaySelectorDelegate() {
+        homeView.setDaySelectorDelegate(self)
+    }
+    
     private func setupNotificationObserver() {
         NotificationCenter.default.addObserver(
             self,
@@ -87,5 +92,15 @@ extension HomeViewController: CompanyListViewDelegate {
         formViewController.modalTransitionStyle = .coverVertical
         formViewController.modalPresentationStyle = .overFullScreen
         self.present(formViewController, animated: true)
+    }
+}
+
+extension HomeViewController: DaySelectorViewDelegate {
+    func didSelectDay(_ date: Date) {
+        let transactions = viewModel.getTransactionsForDate(date)
+        let dateString = viewModel.getDateString(for: date)
+        
+        homeView.updateTransactions(transactions)
+        homeView.updateTransactionDate(dateString)
     }
 }

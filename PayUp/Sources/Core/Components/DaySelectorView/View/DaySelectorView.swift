@@ -8,10 +8,15 @@
 import Foundation
 import UIKit
 
+protocol DaySelectorViewDelegate: AnyObject {
+    func didSelectDay(_ date: Date)
+}
+
 final class DaySelectorView: UIView {
     
     private let viewModel = DaySelectorViewModel()
     private var buttons: [UIButton] = []
+    weak var delegate: DaySelectorViewDelegate?
     
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -82,6 +87,24 @@ final class DaySelectorView: UIView {
     private func dayTapped(_ sender: UIButton) {
         updateSelection(index: sender.tag)
         viewModel.selectDay(at: sender.tag)
+        
+        // Calcular a data correspondente ao dia selecionado
+        let selectedDate = getDateForDayIndex(sender.tag)
+        delegate?.didSelectDay(selectedDate)
+    }
+    
+    private func getDateForDayIndex(_ index: Int) -> Date {
+        let calendar = Calendar.current
+        let today = Date()
+        let todayWeekday = calendar.component(.weekday, from: today)
+        
+        // Converter domingo=1 para segunda=0
+        let todayIndex = (todayWeekday + 5) % 7
+        
+        // Calcular diferença de dias
+        let daysDifference = index - todayIndex
+        
+        return calendar.date(byAdding: .day, value: daysDifference, to: today) ?? today
     }
     
     private func updateSelection(index: Int) {
