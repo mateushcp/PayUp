@@ -58,6 +58,7 @@
 		A9EA0B1F2E46F11A00C9B86F /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EA0B1E2E46F11600C9B86F /* DatabaseManager.swift */; };
 		A9EA0B212E46F30700C9B86F /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EA0B202E46F30400C9B86F /* Client.swift */; };
 		A9EA0B262E46F8A300C9B86F /* ClientFoormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EA0B252E46F89C00C9B86F /* ClientFoormViewModel.swift */; };
+		A9FAD2AF2E7C87BD003AB0B1 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FAD2AE2E7C87B9003AB0B1 /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +115,7 @@
 		A9EA0B1E2E46F11600C9B86F /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		A9EA0B202E46F30400C9B86F /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		A9EA0B252E46F89C00C9B86F /* ClientFoormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientFoormViewModel.swift; sourceTree = "<group>"; };
+		A9FAD2AE2E7C87B9003AB0B1 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -445,6 +447,7 @@
 		A9EA0B1D2E46F0FE00C9B86F /* Dat */ = {
 			isa = PBXGroup;
 			children = (
+				A9FAD2AE2E7C87B9003AB0B1 /* NotificationManager.swift */,
 				A9EA0B1E2E46F11600C9B86F /* DatabaseManager.swift */,
 			);
 			path = Dat;
@@ -554,6 +557,7 @@
 				A9CEC9AC2DB6EC19004EE888 /* UIView+Ext.swift in Sources */,
 				A9CEC9A82DB6EB7A004EE888 /* Colors.swift in Sources */,
 				A98F80DA2DFF556900D12B7E /* PaymentCardModel.swift in Sources */,
+				A9FAD2AF2E7C87BD003AB0B1 /* NotificationManager.swift in Sources */,
 				A9CEC98F2DB6E960004EE888 /* SceneDelegate.swift in Sources */,
 				A9CECA232DB72F15004EE888 /* SplashViewController.swift in Sources */,
 				A9CECA302DB74212004EE888 /* InputTextFieldType.swift in Sources */,

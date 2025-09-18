@@ -25,5 +25,9 @@
 		<string>K2D-Regular.ttf</string>
 		<string>K2D-Bold.ttf</string>
 	</array>
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>background-processing</string>
+    </array>
 </dict>
 </plist>
