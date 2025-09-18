@@ -9,6 +9,8 @@ import Foundation
 
 final class HomeViewModel {
     private let databaseManager = DatabaseManager.shared
+    private var currentNameFilter: String?
+    private var currentDayFilter: String?
     
     func getAllClients() -> [Client] {
         return databaseManager.getClient()
@@ -57,8 +59,9 @@ final class HomeViewModel {
     
     func getTodayTransactions() -> [PaymentCardModel] {
         let todayClients = getTodayClinets()
+        let filteredClients = applyFilters(to: todayClients)
         
-        return todayClients.map { client in
+        return filteredClients.map { client in
             PaymentCardModel(
                 type: .transaction,
                 name: client.name,
@@ -77,13 +80,48 @@ final class HomeViewModel {
             return client.dueDate == dateString
         }
         
-        return clientsForDate.map { client in
+        let filteredClients = applyFilters(to: clientsForDate)
+        
+        return filteredClients.map { client in
             PaymentCardModel(
                 type: .transaction,
                 name: client.name,
                 value: formatCurrency(client.value)
             )
         }
+    }
+    
+    private func applyFilters(to clients: [Client]) -> [Client] {
+        var filteredClients = clients
+        
+        // Filtro por nome
+        if let nameFilter = currentNameFilter, !nameFilter.isEmpty {
+            filteredClients = filteredClients.filter { client in
+                client.name.lowercased().contains(nameFilter.lowercased())
+            }
+        }
+        
+        // Filtro por dia
+        if let dayFilter = currentDayFilter, !dayFilter.isEmpty {
+            filteredClients = filteredClients.filter { client in
+                client.dueDate.contains(dayFilter)
+            }
+        }
+        
+        return filteredClients
+    }
+    
+    func setNameFilter(_ nameFilter: String?) {
+        currentNameFilter = nameFilter
+    }
+    
+    func setDayFilter(_ dayFilter: String?) {
+        currentDayFilter = dayFilter
+    }
+    
+    func clearFilters() {
+        currentNameFilter = nil
+        currentDayFilter = nil
     }
     
     func getTodayDateString() -> String {

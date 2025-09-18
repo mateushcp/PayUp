@@ -40,6 +40,76 @@ final class HomeViewController: UIViewController {
             formViewController.modalPresentationStyle = .overFullScreen
             self.present(formViewController, animated: true)
         }
+        
+        homeView.onTapFilter = { [weak self] in
+            self?.showFilterOptions()
+        }
+    }
+    
+    private func showFilterOptions() {
+        let alert = UIAlertController(title: "Filtrar", message: "Escolha como filtrar os lançamentos", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Filtrar por Nome", style: .default) { _ in
+            self.showNameFilterAlert()
+        })
+        
+        alert.addAction(UIAlertAction(title: "Filtrar por Dia", style: .default) { _ in
+            self.showDayFilterAlert()
+        })
+        
+        alert.addAction(UIAlertAction(title: "Limpar Filtros", style: .destructive) { _ in
+            self.viewModel.clearFilters()
+            self.refreshCurrentData()
+        })
+        
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel))
+        
+        present(alert, animated: true)
+    }
+    
+    private func showNameFilterAlert() {
+        let alert = UIAlertController(title: "Filtrar por Nome", message: "Digite o nome do cliente", preferredStyle: .alert)
+        
+        alert.addTextField { textField in
+            textField.placeholder = "Nome do cliente"
+        }
+        
+        alert.addAction(UIAlertAction(title: "Filtrar", style: .default) { _ in
+            let name = alert.textFields?.first?.text
+            self.viewModel.setNameFilter(name)
+            self.refreshCurrentData()
+        })
+        
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel))
+        
+        present(alert, animated: true)
+    }
+    
+    private func showDayFilterAlert() {
+        let alert = UIAlertController(title: "Filtrar por Dia", message: "Digite o dia (ex: 15, 01, 30)", preferredStyle: .alert)
+        
+        alert.addTextField { textField in
+            textField.placeholder = "Dia (01-31)"
+            textField.keyboardType = .numberPad
+        }
+        
+        alert.addAction(UIAlertAction(title: "Filtrar", style: .default) { _ in
+            let day = alert.textFields?.first?.text
+            self.viewModel.setDayFilter(day)
+            self.refreshCurrentData()
+        })
+        
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel))
+        
+        present(alert, animated: true)
+    }
+    
+    private func refreshCurrentData() {
+        let todayTransactions = viewModel.getTodayTransactions()
+        let todayDateString = viewModel.getTodayDateString()
+        
+        homeView.updateTransactions(todayTransactions)
+        homeView.updateTransactionDate(todayDateString)
     }
     
     private func loadData() {
