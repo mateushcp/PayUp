@@ -54,4 +54,24 @@ final class HomeViewModel {
         let allClients = getAllClients()
         return allClients.first { $0.name == name }
     }
+    
+    func getTodayTransactions() -> [PaymentCardModel] {
+        let todayClients = getTodayClinets()
+        
+        return todayClients.map { client in
+            PaymentCardModel(
+                type: .transaction,
+                name: client.name,
+                value: formatCurrency(client.value)
+            )
+        }
+    }
+    
+    func getTodayDateString() -> String {
+        let today = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd 'de' MMMM"
+        dateFormatter.locale = Locale(identifier: "pt_BR")
+        return dateFormatter.string(from: today)
+    }
 }

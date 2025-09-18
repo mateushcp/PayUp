@@ -45,9 +45,13 @@ final class HomeViewController: UIViewController {
         let clients = viewModel.getCompanyModelsFromClients()
         let todayValue = viewModel.getTotalValueForToday()
         let formatedVallue = viewModel.formatCurrency(todayValue)
+        let todayTransactions = viewModel.getTodayTransactions()
+        let todayDateString = viewModel.getTodayDateString()
         
         homeView.updateCompanyList(companies: clients)
         homeView.updateTodayValue(value: formatedVallue)
+        homeView.updateTransactions(todayTransactions)
+        homeView.updateTransactionDate(todayDateString)
     }
     
     private func setupCompanyListDelegate() {

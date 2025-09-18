@@ -196,11 +196,12 @@ final class HomeView: UIView {
         return label
     }()
     
-    private let transactionCardView: PaymentCardView = {
-        let card = PaymentCardView()
-        card.translatesAutoresizingMaskIntoConstraints = false
-        card.heightAnchor.constraint(equalToConstant: 95).isActive = true
-        return card
+    private lazy var transactionStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 12
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
     }()
     
     private lazy var mainStack: UIStackView = {
@@ -213,7 +214,7 @@ final class HomeView: UIView {
             companyListView,
             transactionHeaderStack,
             transactionDateLabel,
-            transactionCardView
+            transactionStackView
         ])
         stackView.axis = .vertical
         stackView.spacing = 24
@@ -270,9 +271,6 @@ final class HomeView: UIView {
 //        paymentCardView.configure(
 //            with: .init(type: .incoming, name: "Aurora Tech Soluções Digitais", value: "R$ 250,00")
 //        )
-        transactionCardView.configure(
-            with: .init(type: .transaction, name: "Aluguel de Abril", value: "R$ 1.200,00")
-        )
     }
     
     @objc
@@ -293,5 +291,29 @@ final class HomeView: UIView {
     
     func setCompanyListDelegate(_ delegate: CompanyListViewDelegate) {
         companyListView.delegate = delegate
+    }
+    
+    func updateTransactions(_ transactions: [PaymentCardModel]) {
+        transactionStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        
+        if transactions.isEmpty {
+            let emptyLabel = UILabel()
+            emptyLabel.text = "Nenhuma cobrança para hoje"
+            emptyLabel.font = Fonts.paragraphMedium()
+            emptyLabel.textColor = Colors.textParagraph
+            emptyLabel.textAlignment = .center
+            transactionStackView.addArrangedSubview(emptyLabel)
+        } else {
+            for transaction in transactions {
+                let cardView = PaymentCardView()
+                cardView.configure(with: transaction)
+                cardView.heightAnchor.constraint(equalToConstant: 95).isActive = true
+                transactionStackView.addArrangedSubview(cardView)
+            }
+        }
+    }
+    
+    func updateTransactionDate(_ dateString: String) {
+        transactionDateLabel.text = dateString
     }
 }
