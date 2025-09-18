@@ -70,8 +70,8 @@ final class HomeViewModel {
     func getTodayDateString() -> String {
         let today = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd 'de' MMMM"
-        dateFormatter.locale = Locale(identifier: "pt_BR")
+        dateFormatter.dateFormat = "dd 'de MMMM"
+        dateFormatter.locale = .current
         return dateFormatter.string(from: today)
     }
 }
