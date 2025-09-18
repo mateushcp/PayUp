@@ -22,6 +22,7 @@ final class HomeViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         setupCallForAddClient()
         setupCompanyListDelegate()
+        setupNotificationObserver()
         loadData()
     }
     
@@ -51,6 +52,23 @@ final class HomeViewController: UIViewController {
     
     private func setupCompanyListDelegate() {
         homeView.setCompanyListDelegate(self)
+    }
+    
+    private func setupNotificationObserver() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleClientDataChanged),
+            name: .clientDataChanged,
+            object: nil
+        )
+    }
+    
+    @objc private func handleClientDataChanged() {
+        loadData()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
 

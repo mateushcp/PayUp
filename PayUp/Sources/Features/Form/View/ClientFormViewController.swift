@@ -58,7 +58,6 @@ extension ClientFormViewController: ClientFormViewDelegate {
     }
     
     func didTapSave() {
-        dismiss(animated: true)
         guard let client = contentView.getClientData() else {
             showAlert(title: "ERRO", message: "Dados inserios invalidos. Verifique os campos e tente novamente")
             return
@@ -67,6 +66,7 @@ extension ClientFormViewController: ClientFormViewDelegate {
         let success = viewModel.saveClient(client: client)
        
         if success {
+            NotificationCenter.default.post(name: .clientDataChanged, object: nil)
             dismiss(animated: true)
         } else {
             showAlert(title: "Erro", message: "Nao foi possivel salvar o cliente, erro ao inserir no banco de dados")
@@ -87,6 +87,7 @@ extension ClientFormViewController: ClientFormViewDelegate {
             
             let success = self.viewModel.deleteClient(by: clientId)
             if success {
+                NotificationCenter.default.post(name: .clientDataChanged, object: nil)
                 self.dismiss(animated: true)
             } else {
                 self.showAlert(title: "Erro", message: "Não foi possível excluir o cliente do banco de dados")
@@ -100,4 +101,8 @@ extension ClientFormViewController: ClientFormViewDelegate {
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }
+}
+
+extension Notification.Name {
+    static let clientDataChanged = Notification.Name("clientDataChanged")
 }
