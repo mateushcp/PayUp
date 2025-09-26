@@ -11,6 +11,7 @@ import UIKit
 final class HomeViewController: UIViewController {
     private let homeView = HomeView()
     private let viewModel = HomeViewModel()
+    private var currentlySelectedDate: Date = Date()
     
     override func loadView() {
         self.view = homeView
@@ -105,11 +106,11 @@ final class HomeViewController: UIViewController {
     }
     
     private func refreshCurrentData() {
-        let todayTransactions = viewModel.getTodayTransactions()
-        let todayDateString = viewModel.getTodayDateString()
-        
-        homeView.updateTransactions(todayTransactions)
-        homeView.updateTransactionDate(todayDateString)
+        let transactions = viewModel.getTransactionsForDate(currentlySelectedDate)
+        let dateString = viewModel.getDateString(for: currentlySelectedDate)
+
+        homeView.updateTransactions(transactions)
+        homeView.updateTransactionDate(dateString)
     }
     
     private func loadData() {
@@ -167,9 +168,10 @@ extension HomeViewController: CompanyListViewDelegate {
 
 extension HomeViewController: DaySelectorViewDelegate {
     func didSelectDay(_ date: Date) {
+        currentlySelectedDate = date
         let transactions = viewModel.getTransactionsForDate(date)
         let dateString = viewModel.getDateString(for: date)
-        
+
         homeView.updateTransactions(transactions)
         homeView.updateTransactionDate(dateString)
     }

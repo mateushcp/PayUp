@@ -7,23 +7,53 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DC77A662-D012-4D8A-BA4A-AFB9EE2F764A"
+            uuid = "D37B5CFE-2941-426D-BD8B-4A677165BEAE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PayUp/Sources/Core/Dat/NotificationManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "calculateNextDate(from:frequency:selectedDay:)"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "cancelClientReminders(clientId:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D37B5CFE-2941-426D-BD8B-4A677165BEAE - 11a793be208b91"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UNNotificationRequest) -&gt; Swift.Optional&lt;Swift.String&gt; in closure #1 (Swift.Array&lt;__C.UNNotificationRequest&gt;) -&gt; () in PayUp.NotificationManager.cancelClientReminders(clientId: Swift.Optional&lt;Swift.Int&gt;) -&gt; ()"
+                  moduleName = "PayUp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mateuscoelho/Desktop/PayUp/PayUp/Sources/Core/Dat/NotificationManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "127"
+                  endingLineNumber = "127">
+               </Location>
+               <Location
+                  uuid = "D37B5CFE-2941-426D-BD8B-4A677165BEAE - ac2441999b4b87f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PayUp.NotificationManager.cancelClientReminders(clientId: Swift.Optional&lt;Swift.Int&gt;) -&gt; ()"
+                  moduleName = "PayUp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mateuscoelho/Desktop/PayUp/PayUp/Sources/Core/Dat/NotificationManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "127"
+                  endingLineNumber = "127">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2B702869-4A96-44F4-9516-578743AE4F17"
+            uuid = "2005FC4B-77E8-431B-820F-7E853708532B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -33,22 +63,6 @@
             startingLineNumber = "80"
             endingLineNumber = "80"
             landmarkName = "scheduleNotification(for:on:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "55FC1406-CFF0-4451-8678-0B4B1CD59E91"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PayUp/Sources/Core/Dat/DatabaseManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "insertClientAndReturnId(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

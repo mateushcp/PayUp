@@ -137,11 +137,11 @@ final class NotificationManager {
                 print("📄 Notificação encontrada: \(request.identifier)")
             }
 
-            let searchPattern = "client_\(clientId)_"
+            let searchPattern = "client_\(clientId)"
             print("🔍 Procurando por padrão: \(searchPattern)")
 
             let idenntifiersToCancel = requests.compactMap { request -> String? in
-                if request.identifier.starts(with: "client_\(clientId)") {
+                if request.identifier == "client_\(clientId)" {
                     print("✅ MATCH encontrado: \(request.identifier)")
                     return request.identifier
                 } else {
