@@ -7,48 +7,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6CAB530E-78DB-4B3E-B5D8-16C9608B1C90"
+            uuid = "DC77A662-D012-4D8A-BA4A-AFB9EE2F764A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PayUp/Sources/Core/Components/Company/View/CompanyListView.swift"
+            filePath = "PayUp/Sources/Core/Dat/NotificationManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "updateCompanies(_:)"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "calculateNextDate(from:frequency:selectedDay:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7D326CD3-D858-4A0E-881A-413892BB0212"
+            uuid = "2B702869-4A96-44F4-9516-578743AE4F17"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PayUp/Sources/Features/Home/ViewModel/HomeViewModl.swift"
+            filePath = "PayUp/Sources/Core/Dat/NotificationManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
-            landmarkName = "getAllClients()"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "scheduleNotification(for:on:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6EAB1BFD-A669-4314-9BB4-9882FA061A22"
+            uuid = "55FC1406-CFF0-4451-8678-0B4B1CD59E91"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PayUp/Sources/Features/Home/View/HomeViewController.swift"
+            filePath = "PayUp/Sources/Core/Dat/DatabaseManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "showFilterOptions()"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "insertClientAndReturnId(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -77,14 +77,18 @@ final class NotificationManager {
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         
-        let identifier = "client_\(client.id ?? 0)_\(date.timeIntervalSince1970)"
+        let identifier = "client_\(client.id ?? 0)"
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-        
+
+        print("🔔 CRIANDO notificação - clientId: \(client.id ?? 0), identifier: \(identifier)")
+        print("📅 Data da notificação: \(date)")
+        print("⏰ Data atual: \(Date())")
+
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
-                print("Erro aoa gendar a notificacao: \(error)")
+                print("❌ Erro ao agendar notificação: \(error)")
             } else {
-                print("sucesso ao agendar notficiacao")
+                print("✅ Sucesso ao agendar notificação: \(identifier)")
             }
         }
     }
@@ -119,20 +123,41 @@ final class NotificationManager {
     }
     
     func cancelClientReminders(clientId: Int?) {
-        guard let clientId = clientId else { return }
-        
+        guard let clientId = clientId else {
+            print("❌ CANCEL: clientId é nil")
+            return
+        }
+
+        print("🗑️ INICIANDO cancelamento para clientId: \(clientId)")
+
         UNUserNotificationCenter.current().getPendingNotificationRequests { requests in
-            let idenntifiersToCancel = requests.compactMap { request -> String? in
-                if request.identifier.starts(with: "client_\(clientId)_") {
-                    return request.identifier
-                }
-                return nil
+            print("📋 Total de notificações pendentes: \(requests.count)")
+
+            for request in requests {
+                print("📄 Notificação encontrada: \(request.identifier)")
             }
+
+            let searchPattern = "client_\(clientId)_"
+            print("🔍 Procurando por padrão: \(searchPattern)")
+
+            let idenntifiersToCancel = requests.compactMap { request -> String? in
+                if request.identifier.starts(with: "client_\(clientId)") {
+                    print("✅ MATCH encontrado: \(request.identifier)")
+                    return request.identifier
+                } else {
+                    print("❌ NÃO MATCH: \(request.identifier)")
+                    return nil
+                }
+            }
+
+            print("🎯 Identifiers para cancelar: \(idenntifiersToCancel)")
+
             if !idenntifiersToCancel.isEmpty {
                 UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: idenntifiersToCancel)
+                print("🗑️ Cancelando \(idenntifiersToCancel.count) notificações")
+            } else {
+                print("⚠️ Nenhuma notificação encontrada para cancelar")
             }
-            
         }
-        
     }
 }
